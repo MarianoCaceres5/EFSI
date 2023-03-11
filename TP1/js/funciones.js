@@ -53,6 +53,7 @@ function MejorMateria(){
 document.addEventListener('keyup', (event) => {
     
     var disabled = 0;
+    var botones = document.querySelectorAll('.button');
 
     notas.forEach(nota => {
         if(parseFloat(nota.value) < 1 || parseFloat(nota.value) > 10){
@@ -63,10 +64,15 @@ document.addEventListener('keyup', (event) => {
         }
     });
     
-    if(disabled === 1){
-        $('.button').prop('disabled', true); //CONSULTAR SI ESTA BIEN EL JQUERY
+    if(disabled === 1){             
+        botones.forEach(boton => {
+            boton.disabled = true;
+        });
+        // $('.button').prop('disabled', true);
     }else{
-        $('.button').prop('disabled', false);
+        botones.forEach(boton => {
+            boton.disabled = false;
+        });
     }
 
 }, false);
