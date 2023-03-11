@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1</title>
+</head>
+<body>
+    <form action="">
+        <label for="notaMatematica" id="matematica">Matematica</label>
+        <input type="number" id="notaMatematica" placeholder="nota...">
+        <br>
+        <label for="notaLengua" id="lengua">Lengua</label>
+        <input type="number" id="notaLengua" placeholder="nota...">
+        <br>
+        <label for="notaEFSI" id="EFSI">EFSI</label>
+        <input type="number" id="notaEFSI" placeholder="nota...">
+
+        <br>
+        <br>
+
+    </form>
+    <button onclick="CalcularPromedio();" class="button">Calcular promedio</button>
+    <button onclick="MejorMateria();" class="button">Mejor materia</button>
+
+    <hr>
+    
+    <div>
+        Promedio: <span id="resultado"> </span>
+        <br>
+        <br>
+        <img src=" " alt="" id="gif" width="30%" height="auto">
+    </div>
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/funciones.js"></script>
+</body>
+</html>
