@@ -18,6 +18,7 @@ function CalcularPromedio(){
             document.getElementById("resultado").style.color = "green";
             imagen.setAttribute("src", "img/aprobe.gif");
             
+            
         }else{
             document.getElementById("resultado").style.color = "red";
             imagen.setAttribute("src", "img/reprobe.gif");
