@@ -9,7 +9,7 @@ function CalcularPromedio(){
     if(notaMate.value == "" || notaLengua.value == "" || notaEFSI.value == ""){
         alert("Uno/s campo/s no ha/n sido completado/s");
     }else{        
-        var promedio = (parseFloat(notaEFSI.value) + parseFloat(notaLengua.value) + parseFloat(notaMate.value)) / 3;
+        var promedio = (parseFloat(notaEFSI.value) + parseFloat(notaLengua.value) + parseFloat(notaMate.value)) / notas.length;
         var textoPromedio = document.getElementById("resultado");
         textoPromedio.innerHTML = promedio;
 
@@ -38,12 +38,18 @@ function MejorMateria(){
                 menosDiferencia = 10 - parseFloat(notas[i].value);
             }  
         }
-        console.log(menosDiferencia);
+        
+        var txtMejorMateria = "";
         for(i = 0; i < materias.length; i++){
             if(menosDiferencia == (10 - parseFloat(notas[i].value))){
-                materias[i].style.color = "blue";
+                materias[i].style.color = "white";
+                materias[i].style.background = "blue";
+                
+                txtMejorMateria += "-" + materias[i].id;
+                document.getElementById("mejorMateria").innerHTML = txtMejorMateria;
             }else{
                 materias[i].style.color = "black";
+                materias[i].style.background = "white";
             }
         }
 
@@ -76,5 +82,3 @@ document.addEventListener('keyup', (event) => {
     }
 
 }, false);
-
-
