@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+
+}
+
+body{
+    font-size: 20px;
+}
+
+h1{
+    font-size: 2rem;
+    color: gray;
+}
+
+.inputTarea{
+    color: gray;
+}
+
+.agregarTarea{
+    width: 100px;
+    background-color: green;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+}
+
+#lista{
+    margin-top: 1rem;
+}
+
+p{
+    font-size: 1rem;
+}
