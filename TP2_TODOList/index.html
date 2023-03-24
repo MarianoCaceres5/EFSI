@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <title>TP2</title>
 </head>
 <body>
 
-    <div class="container">
-        <input type="text" class="form-control inputTarea" placeholder="Añadir tarea">
-        <button onclick="AgregarTarea()" class="agregarTarea">Agregar</button>
+    <div class="card">
+        
+        <h1>TO-DO LIST</h1>
+        <div class="agregarTarea">
+            <input maxlength="40" type="text" class="inputTarea" placeholder="Añadir tarea...">
+            <button onclick="AgregarTarea()" class="boton">Agregar</button>
+        </div>                
         
         <ul id="lista">
             
         </ul>
+        <button onclick="MostrarTareaMasRapida()" class="botonTareaMasRapida">Tarea mas rapida</button>
+        
     </div>
     
     <script src="main.js"></script>

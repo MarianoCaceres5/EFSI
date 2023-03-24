@@ -1,22 +1,22 @@
 
 let listaTareas = document.querySelector('#lista');
 let arrayTareas = [];
-let idIncremental = 1;
+let idIncremental = -1;
 
 function AgregarTarea(){
+    
     listaTareas.innerHTML = "";
 
-    let tareaIngresada = document.querySelector('.inputTarea').value;
-    //console.log(tareaIngresada);
-
+    let tareaIngresada = document.querySelector('.inputTarea');
     let objetoTarea = {
         id : idIncremental++,
         checked : false,
-        texto : tareaIngresada,
+        texto : tareaIngresada.value,
         fechaCreada :  Date.now(),
         fechaTachada : null
     }
     arrayTareas.push(objetoTarea);
+    tareaIngresada.value = "";
     MostrarTareas();
 
 }
@@ -26,17 +26,19 @@ function MostrarTareas(){
         if(tarea.checked == true){
             listaTareas.innerHTML += 
             `
-                <div class="tarea">
-                    <input type="checkbox" checked onchange="TacharTarea(${tarea.id})">
+                <div class="tarea" onmouseover="MostrarTacho()">
+                    <input type="checkbox" class="checked" checked onchange="TacharTarea(${tarea.id})">
                     <p class="textoTachado">${tarea.texto}</p>    
+                    <img src="img/trashIcon.png" onclick="EliminarTarea()" class="trash" alt="">
                 </div>
             `; 
         }else{
             listaTareas.innerHTML += 
             `
-                <div class="tarea">
+                <div class="tarea" onmouseover="MostrarTacho()">
                     <input type="checkbox" onchange="TacharTarea(${tarea.id})"">
-                    <p>${tarea.texto}</p>    
+                    <p>${tarea.texto}</p>   
+                    <img src="img/trashIcon.png" onclick="EliminarTarea()" class="trash" alt="">                  
                 </div>
             `; 
         }
@@ -47,15 +49,33 @@ function MostrarTareas(){
 function TacharTarea(id){
     listaTareas.innerHTML = "";
     let tareaSeleccionada = arrayTareas.filter(tarea =>(tarea.id == id));
-    tareaSeleccionada.map(tarea =>{
-        if (tarea.checked == true){
+    tareaSeleccionada.map(tarea =>{        
+        if (tarea.checked == true){            
             tarea.checked = false;
-        }else{
+            tarea.fechaTachada = null;
+        }else{            
             tarea.checked = true;
             tarea.fechaTachada = Date.now()
         }
     });
-    console.log(tareaSeleccionada)
-    //MostrarTareas();
+    
+    MostrarTareas();
 
 }
+
+function MostrarTareaMasRapida(){
+    let menorDistancia = 99999999, tareaMasRapida;
+    arrayTareas.map(tarea =>{
+        console.log();
+        if(tarea.fechaTachada != null && (tarea.fechaTachada-tarea.fechaCreada) <= menorDistancia){
+            menorDistancia = tarea.fechaTachada-tarea.fechaCreada;
+            tareaMasRapida = tarea;
+        }
+    });
+    console.log(tareaMasRapida);
+    //MOSTRARLA EN LA PAGINA   
+    //AGREGAR EL ELIMINAR TODO
+
+}
+
+

@@ -4,41 +4,172 @@
     box-sizing: border-box;
 }
 
-.container{
-    
+body{
+    font-size: 25px;
+}
+
+.card{
+
+    background-color: #F8F9FA;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 2rem;
-
-}
-
-body{
-    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.486);
+    width: 750px;
+    height: 450px;
+    overflow-y: scroll;
 }
 
 h1{
-    font-size: 2rem;
-    color: gray;
-}
-
-.inputTarea{
-    color: gray;
-}
-
-.agregarTarea{
-    width: 100px;
-    background-color: green;
-    border: 1px solid white;
-    color: white;
-    border-radius: 5px;
-}
-
-#lista{
-    margin-top: 1rem;
+    font-size: 2.3rem;
+    text-align: center;
+    color: #007BFF;
+    margin: 1rem 0;
 }
 
 p{
+    font-size: 1.5rem;
+    color: #495057;
+    padding-bottom: 10px;
+}
+
+
+.agregarTarea{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 55px;
+    margin-bottom: 2rem;
+}
+
+.inputTarea{
+    border: 1px solid #F8F9FA;
+    height: 2.3rem;
+    border-radius: 4px;
+    width: 100%;
+    height: 60px;
+    padding: 0 150px 0 2rem;
+    font-size: 1.3rem;
+    box-shadow: 1.5px 1.5px 2px rgb(219, 219, 219);
+}
+
+.boton{
+    background-color: #007BFF;
+    color: white;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
     font-size: 1rem;
+    transition: all ease-in-out 200ms;
+
+    position: absolute;
+    right: 80px;
+}
+
+.boton:hover{
+    background-color: white;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+
+#lista{    
+
+    width: 90%;
+    border-top: 1.5px solid rgb(216, 216, 216);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 60px 50px;
+    overflow: auto;
+}
+
+.tarea{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.tarea:hover{
+    background-color: #dfdfdf;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    
+    -webkit-appearance: none;
+    appearance: none;    
+    background-color: #fff;    
+    margin-right: 20px;
+
+    font: inherit;
+    color:#007BFF;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color:#007BFF;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+.checked{
+    color:rgba(128, 128, 128, 0.514);
+}
+
+.textoTachado{
+    text-decoration: line-through;
+    color: rgba(128, 128, 128, 0.514);
+}
+
+.botonTareaMasRapida{
+    background-color: white;
+    color: #a5a5a5;
+    border: 1px solid #a5a5a5;
+    border-radius: 4px;
+    width: 150px;
+    height: 30px;
+    font-size: 0.75rem;
+    transition: all ease-in-out 150ms;
+
+    position: absolute;
+    top: 190px;
+    right: 35px;
+}
+
+.botonTareaMasRapida:hover{
+    background-color: #c0c0c0;
+    color: white;
+    border: 1px solid #c0c0c0;
+    cursor: pointer;
+}
+
+.trash{
+    position: absolute;
+    left: 550px;
+    width: 8%;
+    height: auto;
+}
+
+.tarea:hover ~ .tacho{
+    display: block;
 }
