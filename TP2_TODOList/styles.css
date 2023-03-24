@@ -88,10 +88,30 @@ p{
     overflow: auto;
 }
 
+.botonEliminar{
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    font-size: 1rem;
+    transition: all ease-in-out 200ms;
+
+    position: absolute;
+    right:70px;
+}
+
+.botonEliminar:hover{
+    background-color: white;
+    color: red;
+    cursor: pointer;
+}
+
 .tarea{
     display: flex;
     align-items: center;
-    padding: 12px;
+    padding: 15px;
 }
 
 .tarea:hover{
@@ -163,13 +183,4 @@ input[type="checkbox"]:checked::before {
     cursor: pointer;
 }
 
-.trash{
-    position: absolute;
-    left: 550px;
-    width: 8%;
-    height: auto;
-}
 
-.tarea:hover ~ .tacho{
-    display: block;
-}
