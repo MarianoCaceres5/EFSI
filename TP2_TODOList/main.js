@@ -24,7 +24,7 @@ function MostrarTareas(){
         if(tarea.checked == true){
             listaTareas.innerHTML += 
             `
-                <div class="tarea">
+                <div id="${tarea.id}" class="tarea">
                     <input type="checkbox" class="checked" checked onchange="TacharTarea(${tarea.id})">
                     <p class="textoTachado">${tarea.texto}</p>    
                     <button onclick="EliminarTarea(${tarea.id})" class="botonEliminar">Eliminar</button>
@@ -33,7 +33,7 @@ function MostrarTareas(){
         }else{
             listaTareas.innerHTML += 
             `
-                <div class="tarea">
+                <div id="${tarea.id}" class="tarea">
                     <input type="checkbox" onchange="TacharTarea(${tarea.id})"">
                     <p>${tarea.texto}</p>   
                     <button onclick="EliminarTarea(${tarea.id})" class="botonEliminar">Eliminar</button>                  
@@ -59,26 +59,31 @@ function TacharTarea(id){
 }
 
 function MostrarTareaMasRapida(){
-    let menorDistancia = 99999999, tareaMasRapida;
+    let menorDistancia = 99999999, tareaMasRapida, tareaHecha = false;
     arrayTareas.map(tarea =>{
         if(tarea.fechaTachada != null && (tarea.fechaTachada-tarea.fechaCreada) <= menorDistancia){
+            tareaHecha = true;
             menorDistancia = tarea.fechaTachada-tarea.fechaCreada;
             tareaMasRapida = tarea;
         }
     });
-
-    let tareaTemporal = tareaMasRapida;
-    arrayTareas[arrayTareas.indexOf(tareaMasRapida)] = arrayTareas[0];
-    arrayTareas[0]= tareaTemporal;
-    MostrarTareas();
-    //FALTA DISTINGUIRLA CON UN COLOR O ALGO 
-    //HACER QUE ELIMINAR SE MEUSTRE CON HOVER
-
+    if(tareaHecha == true){
+        // let tareaTemporal = tareaMasRapida;
+        // arrayTareas[arrayTareas.indexOf(tareaMasRapida)] = arrayTareas[0];
+        // arrayTareas[0]= tareaTemporal;
+        // MostrarTareas();
+        document.querySelector('.tareaMasRapida').style.display = 'block';
+        document.querySelector('.tareaMasRapida').innerHTML = `
+            <h3>Tarea hecha en el menor tiempo: <span style="color:#007BFF;"> ${tareaMasRapida.texto} </span></h3>
+        `;
+    }else{
+        document.querySelector('.tareaMasRapida').style.display = 'none';
+        alert("Ninguna tarea fue realizada todavia");
+    }
 }
 
 function EliminarTarea(id){
     let arrayActualizado = arrayTareas.filter(tarea =>(tarea.id != id));
     arrayTareas = arrayActualizado;
     MostrarTareas();
-
 }
