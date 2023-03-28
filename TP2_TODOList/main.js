@@ -3,19 +3,24 @@ let listaTareas = document.querySelector('#lista');
 let arrayTareas = [];
 let idIncremental = 0;
 
-function AgregarTarea(){
-    
+function AgregarTarea(){   
+
     let tareaIngresada = document.querySelector('.inputTarea');
-    let objetoTarea = {
-        id : idIncremental++,
-        checked : false,
-        texto : tareaIngresada.value,
-        fechaCreada :  Date.now(),
-        fechaTachada : null
+    if(tareaIngresada.value != 0){
+        let objetoTarea = {
+            id : idIncremental++,
+            checked : false,
+            texto : tareaIngresada.value,
+            fechaCreada :  Date.now(),
+            fechaTachada : null
+        }
+        arrayTareas.push(objetoTarea);
+        tareaIngresada.value = "";
+        MostrarTareas();
+    }else{
+        alert("INGRESE UNA TAREA");
     }
-    arrayTareas.push(objetoTarea);
-    tareaIngresada.value = "";
-    MostrarTareas();
+
 }
 
 function MostrarTareas(){
@@ -24,20 +29,20 @@ function MostrarTareas(){
         if(tarea.checked == true){
             listaTareas.innerHTML += 
             `
-                <div id="${tarea.id}" class="tarea">
+                <li id="${tarea.id}" class="tarea">
                     <input type="checkbox" class="checked" checked onchange="TacharTarea(${tarea.id})">
                     <p class="textoTachado">${tarea.texto}</p>    
                     <button onclick="EliminarTarea(${tarea.id})" class="botonEliminar">Eliminar</button>
-                </div>
+                </li>
             `; 
         }else{
             listaTareas.innerHTML += 
             `
-                <div id="${tarea.id}" class="tarea">
+                <li id="${tarea.id}" class="tarea">
                     <input type="checkbox" onchange="TacharTarea(${tarea.id})"">
                     <p>${tarea.texto}</p>   
                     <button onclick="EliminarTarea(${tarea.id})" class="botonEliminar">Eliminar</button>                  
-                </div>
+                </li>
             `; 
         }
     });
@@ -67,11 +72,7 @@ function MostrarTareaMasRapida(){
             tareaMasRapida = tarea;
         }
     });
-    if(tareaHecha == true){
-        // let tareaTemporal = tareaMasRapida;
-        // arrayTareas[arrayTareas.indexOf(tareaMasRapida)] = arrayTareas[0];
-        // arrayTareas[0]= tareaTemporal;
-        // MostrarTareas();
+    if(tareaHecha == true){        
         document.querySelector('.tareaMasRapida').style.display = 'block';
         document.querySelector('.tareaMasRapida').innerHTML = `
             <h3>Tarea hecha en el menor tiempo: <span style="color:#007BFF;"> ${tareaMasRapida.texto} </span></h3>
