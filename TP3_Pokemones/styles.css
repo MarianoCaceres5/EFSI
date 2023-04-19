@@ -8,12 +8,11 @@
 body{
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgba(165, 222, 249, 0.726);
+    /* background-color: rgba(165, 222, 249, 0.726); */
+    background-color: aliceblue;
 }
 
-h1{
-    font-size: 2.5rem;
-}
+h1{font-size: 2.3rem;}
 
 .container{
     display: flex;
@@ -41,69 +40,85 @@ h1{
     width: 275px;
     height: 275px;
     border-radius: 1rem;
-    border: 1px solid rgb(249, 225, 93);    
+    border: 1px solid red;    
     overflow: hidden;
     text-align: center;
     background-color: white;
     position: inherit;
+    transition: all 200ms ease-in-out;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.42);
     
 }
 
-.card-pokemon:hover > #boton-mostrar-pokemon{    
-    opacity: 1;    
-}
-
-#boton-mostrar-pokemon{
-    position: relative;
-    bottom: 3rem;
-    width: 200px;
-    height: 75px;
-    border-radius: 15px;
-    border: 1px solid white;
-    background-color: rgb(249, 225, 93);
-    font-size: 1.2rem;
-    transition: all ease-in-out 150ms;
-    font-weight: bold;    
-
-    opacity: 0;
-}
-
-#boton-mostrar-pokemon:hover{
-    border: 1px solid rgb(249, 225, 93);
-    background-color: white;
-    font-size: 1.2rem;
-    color: rgb(232, 166, 40);
+.card-pokemon:hover{    
+    width: 300px;
+    height: 300px;
     cursor: pointer;
+    box-shadow: 10px 10px 69px 0px rgba(0,0,0,0.42);
+    
 }
 
 .card-informacion{
-    display: none;
+    display: block;
     position: fixed;
     top: 10%;
     left: 60%;
     width: 60vh;
     height: 80vh;
-    background-color: rgb(249, 225, 93);
+    background-color: white;
     border-radius: 1rem;
-    border: 3px solid white;
     padding: 4rem;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.67);
+    box-shadow: 2px 10px 31px -1px rgba(0,0,0,1);
+    overflow: hidden;
+}
+
+.circulo{
+    position: absolute;
+    left: 50%;
+    top: -60%;
+    transform: translateX(-50%);
+    background: red;
+    border-radius: 50%;
+    width: 900px;
+    height: 850px;
+    z-index: -1;
 }
 
 .card-informacion h1{
-    color: white;
+    margin-top: 110px;
+    color: black;
     font-size: 4rem;
-    font-weight: bold;
     
 }
 
 .card-informacion img{
     position: relative;
-    top: -20px;
-    width: 300px;
+    top: 100px;
+    width: 15vw;
 }
 
 .encabezado{
     text-align: center;
+}
+
+.informacion{
+    position: absolute;
+    column-count: 3;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    /* margin-top: 30%; */
+}
+
+.informacion h2{
+    font-size: 3rem;
+    color: black;
+    font-weight: bolder;
+}
+
+.informacion h4{
+    color: black;
+    font-weight:normal;
 }
 

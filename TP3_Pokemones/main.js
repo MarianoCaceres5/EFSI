@@ -27,10 +27,10 @@ function CargarPokemon(url){
         
         document.querySelector("#lista-pokemones").innerHTML += `
             <li>
-                <div class="card-pokemon">
-                    <img src="${pokemon.sprites.front_default}" alt="">
+                <div class="card-pokemon" onclick="MostrarDetalle(${pokemon.id})">
+                    <img width="50%" src="${pokemon.sprites.front_default}" alt="">
                     <h1>${pokemon.name}</h1>   
-                    <button id="boton-mostrar-pokemon" onclick="MostrarDetalle(${pokemon.id})">Detalle Pokemon</button>                 
+                                    
                 </div>
             </li>
         `;
@@ -43,18 +43,22 @@ function CargarPokemon(url){
 function MostrarDetalle(id){
     let nuevoArray = ARRAY_POKEMONES.filter(pokemon => pokemon.id == id);
     let pokemonElegido = nuevoArray[0];
+
     document.querySelector(".card-informacion").style.display = "block";
-    document.querySelector(".card-informacion").innerHTML = ``;
-    document.querySelector(".card-informacion").innerHTML += `
-        
+    document.querySelector(".card-informacion").innerHTML = `
+        <div class="circulo"></div>
         <div class="encabezado">
             <img src="https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonElegido.id}.svg" alt="">   
             <h1>${pokemonElegido.name}</h1>             
         </div>
         <div class="informacion">
-            <h3>${pokemonElegido.base_experience}</h3>          
-        </div>
-        
+            <h2>${pokemonElegido.base_experience}</h2>          
+            <h4>Experiencia</h4>       
+            <h2>${pokemonElegido.stats[1].base_stat}</h2>          
+            <h4>Ataque</h4>    
+            <h2>${pokemonElegido.stats[2].base_stat}</h2>          
+            <h4>Defensa</h4>    
+        </div>   
                 
         
     `;
