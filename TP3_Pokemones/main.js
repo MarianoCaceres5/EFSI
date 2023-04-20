@@ -16,31 +16,33 @@ axios
 
 
 
-function CargarPokemon(url){
-    axios
-    .get(url)
-    .then((result) =>{
+    function CargarPokemon(url){
         
-        let pokemon = result.data;
-        ARRAY_POKEMONES.push(pokemon);
-        console.log(pokemon);
-        
-        document.querySelector("#lista-pokemones").innerHTML += `
-            <li>
-                <div class="card-pokemon" onclick="MostrarDetalle(${pokemon.id})">
-                    <img width="50%" src="${pokemon.sprites.front_default}" alt="">
-                    <h1>${pokemon.name}</h1>   
-                                    
-                </div>
-            </li>
-        `;
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-}
+        axios
+        .get(url)
+        .then((result) =>{
+            
+            let pokemon = result.data;
+            ARRAY_POKEMONES.push(pokemon);
+            console.log(pokemon);
+            
+            document.querySelector("#lista-pokemones").innerHTML += `
+                <li>
+                    <div class="card-pokemon" onclick="MostrarDetalle(${pokemon.id})">
+                        <img width="50%" src="${pokemon.sprites.front_default}" alt="">
+                        <h1>${pokemon.name}</h1>   
+                                        
+                    </div>
+                </li>
+            `;
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
 
 function MostrarDetalle(id){
+    
     let nuevoArray = ARRAY_POKEMONES.filter(pokemon => pokemon.id == id);
     let pokemonElegido = nuevoArray[0];
 
@@ -48,7 +50,7 @@ function MostrarDetalle(id){
     document.querySelector(".card-informacion").innerHTML = `
         <div class="circulo"></div>
         <div class="encabezado">
-            <img src="https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonElegido.id}.svg" alt="">   
+            <img class="foto-pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonElegido.id}.png" alt="">   
             <h1>${pokemonElegido.name}</h1>             
         </div>
         <div class="informacion">
