@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Web site created using create-react-app" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+        <link rel="manifest" href="/manifest.json" />
+        <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+        <title>Administración de Pacientes</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+        <style>
+            html {
+                min-height: 100%;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                background-image: linear-gradient(-225deg, #a445b2 0%, #d41872 52%, #ff0066 100%);
+                min-height: 100%;
+                padding-bottom: 5rem;
+            }
+            h1,
+            h2 {
+                color: white;
+                padding: 3rem 0;
+                text-align: center;
+
+                text-transform: uppercase;
+
+                font-family: "Staatliches", cursive;
+                letter-spacing: 1px;
+            }
+            .lista-citas .media {
+                border-bottom: 1px solid #e1e1e1;
+                padding-bottom: 3rem;
+            }
+
+            .lista-citas .media:last-of-type {
+                border-bottom: 0;
+            }
+            .lista-citas .media-body p {
+                margin: 0;
+            }
+            .lista-citas .media-body button {
+                margin-top: 1rem !important;
+            }
+            .lista-citas .media-body span {
+                font-weight: bold;
+            }
+
+            label {
+                color: white;
+            }
+
+            input[type="date"],
+            input[type="time"] {
+                height: 38px;
+                padding: 6px 10px;
+                background-color: #fff;
+                border: 1px solid #d1d1d1;
+                border-radius: 4px;
+                box-shadow: none;
+                box-sizing: border-box;
+            }
+
+            .cita {
+                padding: 2rem;
+                background: white;
+                border-bottom: 1px solid #e1e1e1;
+                color: black;
+            }
+
+            .cita p {
+                font-weight: bold;
+                margin-bottom: 0.8rem;
+            }
+            .cita p span {
+                font-weight: normal;
+            }
+            .cita:first-of-type {
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+            }
+            .cita:last-of-type {
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+            }
+            .button.eliminar,
+            .button.eliminar:hover {
+                background-color: #c10059;
+                color: white;
+                margin-top: 2rem;
+            }
+
+            .alerta-error {
+                background-color: white;
+                color: red;
+                padding: 1rem;
+                font-size: 2rem;
+                text-transform: uppercase;
+                text-align: center;
+                font-family: "Staatliches", cursive;
+            }
+            /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvaW5kZXguY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxTQUFTO0VBQ1QsVUFBVTtFQUNWLHVCQUF1QjtFQUN2QixpRkFBaUY7RUFDakYsZ0JBQWdCO0VBQ2hCLG9CQUFvQjtBQUN0QjtBQUNBO0VBQ0UsWUFBWTtFQUNaLGVBQWU7RUFDZixrQkFBa0I7O0VBRWxCLHlCQUF5Qjs7RUFFekIsbUNBQW1DO0VBQ25DLG1CQUFtQjtBQUNyQjtBQUNBO0VBQ0UsZ0NBQWdDO0VBQ2hDLG9CQUFvQjtBQUN0Qjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0UsUUFBUTtBQUNWO0FBQ0E7RUFDRSwwQkFBMEI7QUFDNUI7QUFDQTtFQUNFLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLFlBQVk7QUFDZDs7QUFFQTs7RUFFRSxZQUFZO0lBQ1YsaUJBQWlCO0lBQ2pCLHNCQUFzQjtJQUN0Qix5QkFBeUI7SUFDekIsa0JBQWtCO0lBQ2xCLGdCQUFnQjtJQUNoQixzQkFBc0I7QUFDMUI7O0FBRUE7RUFDRSxhQUFhO0VBQ2IsaUJBQWlCO0VBQ2pCLGdDQUFnQztFQUNoQyxZQUFZO0FBQ2Q7O0FBRUE7RUFDRSxpQkFBaUI7RUFDakIsb0JBQW9CO0FBQ3RCO0FBQ0E7RUFDRSxtQkFBbUI7O0FBRXJCO0FBQ0E7RUFDRSw0QkFBNEI7RUFDNUIsNkJBQTZCO0FBQy9CO0FBQ0E7RUFDRSwrQkFBK0I7RUFDL0IsZ0NBQWdDO0FBQ2xDO0FBQ0E7O0VBRUUseUJBQXlCO0VBQ3pCLFlBQVk7RUFDWixnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSx1QkFBdUI7RUFDdkIsVUFBVTtFQUNWLGFBQWE7RUFDYixlQUFlO0VBQ2YseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQixvQ0FBb0M7QUFDdEMiLCJzb3VyY2VzQ29udGVudCI6WyJodG1sIHtcbiAgbWluLWhlaWdodDogMTAwJTtcbn1cbmJvZHkge1xuICBtYXJnaW46IDA7XG4gIHBhZGRpbmc6IDA7XG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoLTIyNWRlZywgI0E0NDVCMiAwJSwgI0Q0MTg3MiA1MiUsICNGRjAwNjYgMTAwJSk7XG4gIG1pbi1oZWlnaHQ6IDEwMCU7XG4gIHBhZGRpbmctYm90dG9tOiA1cmVtO1xufVxuaDEsIGgyICB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZzogM3JlbSAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG5cbiAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcblxuICBmb250LWZhbWlseTogJ1N0YWF0bGljaGVzJywgY3Vyc2l2ZTtcbiAgbGV0dGVyLXNwYWNpbmc6IDFweDtcbn1cbi5saXN0YS1jaXRhcyAubWVkaWEge1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2UxZTFlMTtcbiAgcGFkZGluZy1ib3R0b206IDNyZW07XG59XG5cbi5saXN0YS1jaXRhcyAubWVkaWE6bGFzdC1vZi10eXBle1xuICBib3JkZXItYm90dG9tOiAwO1xufVxuLmxpc3RhLWNpdGFzIC5tZWRpYS1ib2R5IHAge1xuICBtYXJnaW46MDtcbn1cbi5saXN0YS1jaXRhcyAubWVkaWEtYm9keSBidXR0b24ge1xuICBtYXJnaW4tdG9wOiAxcmVtIWltcG9ydGFudDtcbn1cbi5saXN0YS1jaXRhcyAubWVkaWEtYm9keSBzcGFuIHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbmxhYmVsIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG5pbnB1dFt0eXBlPVwiZGF0ZVwiXSxcbmlucHV0W3R5cGU9XCJ0aW1lXCJdIHtcbiAgaGVpZ2h0OiAzOHB4O1xuICAgIHBhZGRpbmc6IDZweCAxMHB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI0QxRDFEMTtcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgYm94LXNoYWRvdzogbm9uZTtcbiAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xufVxuXG4uY2l0YSB7XG4gIHBhZGRpbmc6IDJyZW07XG4gIGJhY2tncm91bmQ6IHdoaXRlO1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2UxZTFlMTtcbiAgY29sb3I6IGJsYWNrO1xufVxuXG4uY2l0YSBwIHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIG1hcmdpbi1ib3R0b206IC44cmVtO1xufVxuLmNpdGEgcCBzcGFuIHtcbiAgZm9udC13ZWlnaHQ6IG5vcm1hbDtcblxufVxuLmNpdGE6Zmlyc3Qtb2YtdHlwZSB7XG4gIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDFyZW07XG4gIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAxcmVtO1xufVxuLmNpdGE6bGFzdC1vZi10eXBlIHtcbiAgYm9yZGVyLWJvdHRvbS1sZWZ0LXJhZGl1czogMXJlbTtcbiAgYm9yZGVyLWJvdHRvbS1yaWdodC1yYWRpdXM6IDFyZW07XG59XG4uYnV0dG9uLmVsaW1pbmFyLFxuLmJ1dHRvbi5lbGltaW5hcjpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNjMTAwNTk7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgbWFyZ2luLXRvcDogMnJlbTtcbn1cblxuLmFsZXJ0YS1lcnJvciB7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBjb2xvcjogcmVkO1xuICBwYWRkaW5nOiAxcmVtO1xuICBmb250LXNpemU6IDJyZW07XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZm9udC1mYW1pbHk6ICAnU3RhYXRsaWNoZXMnLCBjdXJzaXZlO1xufSAiXSwic291cmNlUm9vdCI6IiJ9 */
+        </style>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root">
+            <h1>ADMINISTRADOR DE PACIENTES</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="one-half column">
+                        <h2>Crear mi Cita</h2>
+                        <form>
+                            <label>Nombre Mascota</label><input type="text" name="mascota" class="u-full-width" placeholder="Nombre Mascota" value="" /><label>Nombre Dueño</label>
+                            <input type="text" name="propietario" class="u-full-width" placeholder="Nombre dueño de la mascota" value="" /><label>Fecha</label><input type="date" name="fecha" class="u-full-width" value="" />
+                            <label>hora</label><input type="time" name="hora" class="u-full-width" value="" /><label>Sintomas</label><textarea name="sintomas" class="u-full-width"></textarea>
+                            <button type="submit" class="u-full-width button-primary">Agregar Cita</button>
+                        </form>
+                    </div>
+                    <div class="one-half column">
+                        <h2>Administra tus citas</h2>
+                        <div class="cita">
+                            <p>Mascota: <span>Nina</span></p>
+                            <p>Dueño: <span>Martin</span></p>
+                            <p>Fecha: <span>2021-08-05</span></p>
+                            <p>Hora: <span>08:20</span></p>
+                            <p>Sintomas: <span>Le duele la pierna</span></p>
+                            <button class="button elimnar u-full-width">Eliminar ×</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/static/js/bundle.js"></script>
+        <script src="/static/js/vendors~main.chunk.js"></script>
+        <script src="/static/js/main.chunk.js"></script>
+    </body>
+</html>
