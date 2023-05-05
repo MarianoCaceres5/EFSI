@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Titulo from './components/Titulo.js'
+// import Subtitulo from './components/Subtitulo.js'
+import Formulario from './components/Formulario.js';
+import ListadoCitas from './components/ListadoCitas.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>    
+            <Titulo/>
+            <div className="container">
+                <div className="row">
+                    <div className="one-half column">
+                        {/* <Subtitulo texto="CREAR MI CITA"/> */}
+                        <h2>CREAR MI CITA</h2>
+                        <Formulario/>
+                    </div>
+                    <div className="one-half column">
+                        {/* <Subtitulo texto="Administra tus citas"/>*/}
+                        <h2>Administra tus citas</h2>
+                        <ListadoCitas/>
+                    </div>
+                </div>
+            </div>        
+        </>
+    );
 }
 
-export default App;
+export default App
+
