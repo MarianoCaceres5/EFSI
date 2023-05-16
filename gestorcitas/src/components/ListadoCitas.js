@@ -1,18 +1,29 @@
-import { type } from "@testing-library/user-event/dist/type";
-import Cita from "./Cita";
-import { useEffect, useState } from "react";
 
-export default function ListadoCitas({listaCitas}){
+// import Cita from "./Cita";
 
-    function eliminarCita(idCita){
-        document.getElementById(idCita).style.display = 'none';
-    }
+export default function ListadoCitas({listaCitas, onEliminarCita}){
 
     return (
     <>         
         {listaCitas.map(cita => (
-            <div key={cita.id} id={cita.id} className="cita">
-                <Cita citaMostrada={cita} onEliminarCita={eliminarCita}/>
+            <div key={cita.id} className="cita">
+                {/* <Cita citaMostrada={cita}/> */}
+                <p>
+                    Mascota: <span>{cita.mascota}</span>
+                </p>
+                <p>
+                    Dueño: <span>{cita.dueno}</span>
+                </p>
+                <p>
+                    Fecha: <span>{cita.fecha}</span>
+                </p>
+                <p>
+                    Hora: <span>{cita.hora}</span>
+                </p>
+                <p>
+                    Sintomas: <span>{cita.sintomas}</span>
+                </p>
+                <button onClick={onEliminarCita(cita.id)} className="button elimnar u-full-width">Eliminar x </button>
             </div>            
         ))}
     </>

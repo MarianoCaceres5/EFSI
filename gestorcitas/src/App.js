@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Titulo from './components/Titulo.js'
 // import Subtitulo from './components/Subtitulo.js'
@@ -18,6 +18,11 @@ function App() {
         )
     }
 
+    function eliminarCita(idCita){
+        let nuevoArray = arrayCitas.filter(cita => cita.id != idCita);
+        setArrayCitas(nuevoArray)
+    }
+
     return (
         <>    
             <Titulo/>
@@ -30,7 +35,7 @@ function App() {
                     </div>   
                     <div className="one-half column">
                         <h2>Administra tus citas</h2>
-                        <ListadoCitas listaCitas={arrayCitas} />
+                        <ListadoCitas listaCitas={arrayCitas} onEliminarCita={eliminarCita}/>
                     </div>                 
                 </div>
             </div>        
