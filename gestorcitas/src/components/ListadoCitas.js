@@ -1,26 +1,18 @@
 import { type } from "@testing-library/user-event/dist/type";
 import Cita from "./Cita";
+import { useEffect, useState } from "react";
 
-export default function ListadoCitas(citas){
+export default function ListadoCitas({listaCitas}){
 
-    let listaCitas;
-
-    if(Array.isArray(citas)){
-        listaCitas = [
-            {id:0, mascota:"Nina", dueno:"Martin", fecha:"2021-08-05", hora:"08:20", sintomas:"Le duele la pierna"}, 
-            ...citas       
-        ]
-    }else{
-        listaCitas = [
-            {id:0, mascota:"Nina", dueno:"Martin", fecha:"2021-08-05", hora:"08:20", sintomas:"Le duele la pierna"},     
-        ]
+    function eliminarCita(idCita){
+        document.getElementById(idCita).style.display = 'none';
     }
 
     return (
     <>         
         {listaCitas.map(cita => (
-            <div key={cita.id} className="cita">
-                <Cita prop={cita} />
+            <div key={cita.id} id={cita.id} className="cita">
+                <Cita citaMostrada={cita} onEliminarCita={eliminarCita}/>
             </div>            
         ))}
     </>

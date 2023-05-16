@@ -1,9 +1,8 @@
 
 // import CampoFormulario from "./CampoFormulario";
 import { useState } from "react";
-import ListadoCitas from "./ListadoCitas";
 
-export default function Formulario() {
+export default function Formulario({onAgregarCita}) {
 
     // let camposFormulario = [
     //     {id:0, label:"Nombre Mascota", type:"text", name:"mascota", placeholder:"Nombre Mascota"},
@@ -18,10 +17,7 @@ export default function Formulario() {
     const [duenoState, setDueno] = useState('');
     const [fechaState, setFecha] = useState('');
     const [horaState, setHora] = useState('');
-    const [sintomasState, setSintomas] = useState('');
-    const [arrayCitas, setArrayCitas] = useState([
-        {id:1, mascota:"Nina", dueno:"Martin", fecha:"2021-08-05", hora:"08:20", sintomas:"Le duele la pierna"}
-    ]);   
+    const [sintomasState, setSintomas] = useState('');   
 
     function crearCita(e){
 
@@ -35,14 +31,10 @@ export default function Formulario() {
             fecha: fechaState,
             hora:horaState,
             sintomas:sintomasState
-        }          
-        
-        setArrayCitas([
-            ...arrayCitas,
-            cita
-        ])
+        } 
 
-        ListadoCitas(arrayCitas)
+        onAgregarCita(cita)
+
     }
 
     return (

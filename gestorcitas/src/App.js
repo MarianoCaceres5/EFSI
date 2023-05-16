@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import './App.css';
 import Titulo from './components/Titulo.js'
 // import Subtitulo from './components/Subtitulo.js'
 import Formulario from './components/Formulario.js';
 import ListadoCitas from './components/ListadoCitas';
 
-
 function App() {
+
+    const [arrayCitas, setArrayCitas] = useState([{id:0, mascota:"Pedro", dueno:"Bautista", fecha:"2021-08-05", hora:"08:20", sintomas:"Problemas estomacales"}]);  
+
+    function agregarCita(cita){
+        setArrayCitas(
+            [
+                ...arrayCitas,
+                cita
+            ]            
+        )
+    }
 
     return (
         <>    
@@ -16,11 +26,11 @@ function App() {
                     <div className="one-half column">
                         {/* <Subtitulo texto="CREAR MI CITA"/> */}
                         <h2>CREAR MI CITA</h2>
-                        <Formulario/>
+                        <Formulario onAgregarCita={agregarCita}/>
                     </div>   
                     <div className="one-half column">
                         <h2>Administra tus citas</h2>
-                        <ListadoCitas/>
+                        <ListadoCitas listaCitas={arrayCitas} />
                     </div>                 
                 </div>
             </div>        
