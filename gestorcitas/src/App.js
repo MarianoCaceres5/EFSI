@@ -8,6 +8,7 @@ import ListadoCitas from './components/ListadoCitas';
 function App() {
 
     const [arrayCitas, setArrayCitas] = useState([{id:0, mascota:"Pedro", dueno:"Bautista", fecha:"2021-08-05", hora:"08:20", sintomas:"Problemas estomacales"}]);  
+    let nuevoArray = [];
 
     function agregarCita(cita){
         setArrayCitas(
@@ -16,12 +17,13 @@ function App() {
                 cita
             ]            
         )
+        nuevoArray = arrayCitas;
     }
 
-    function eliminarCita(idCita){
-        let nuevoArray = arrayCitas.filter(cita => cita.id != idCita);
-        setArrayCitas(nuevoArray)
-    }
+    // function eliminarCita(idCita){
+    //     nuevoArray = arrayCitas.filter((cita) => cita.id !== idCita);
+    //     setArrayCitas(nuevoArray)
+    // }
 
     return (
         <>    
@@ -35,7 +37,7 @@ function App() {
                     </div>   
                     <div className="one-half column">
                         <h2>Administra tus citas</h2>
-                        <ListadoCitas listaCitas={arrayCitas} onEliminarCita={eliminarCita}/>
+                        <ListadoCitas listaCitas={arrayCitas}/>
                     </div>                 
                 </div>
             </div>        

@@ -1,7 +1,7 @@
 
 // import Cita from "./Cita";
 
-export default function ListadoCitas({listaCitas, onEliminarCita}){
+export default function ListadoCitas({listaCitas}){
 
     return (
     <>         
@@ -23,7 +23,7 @@ export default function ListadoCitas({listaCitas, onEliminarCita}){
                 <p>
                     Sintomas: <span>{cita.sintomas}</span>
                 </p>
-                <button onClick={onEliminarCita(cita.id)} className="button elimnar u-full-width">Eliminar x </button>
+                <button className="button elimnar u-full-width">Eliminar x </button>
             </div>            
         ))}
     </>

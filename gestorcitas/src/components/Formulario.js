@@ -12,7 +12,7 @@ export default function Formulario({onAgregarCita}) {
     //     // {id:4,label:"Sintomas", type:"textarea", name:"sintomas"}
     // ]    
 
-    const [idState, setId] = useState(2);
+    const [idState, setId] = useState(1);
     const [mascotaState, setMascota] = useState('');
     const [duenoState, setDueno] = useState('');
     const [fechaState, setFecha] = useState('');
