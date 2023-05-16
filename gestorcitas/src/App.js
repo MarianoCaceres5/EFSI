@@ -3,9 +3,11 @@ import './App.css';
 import Titulo from './components/Titulo.js'
 // import Subtitulo from './components/Subtitulo.js'
 import Formulario from './components/Formulario.js';
-import ListadoCitas from './components/ListadoCitas.js';
+import ListadoCitas from './components/ListadoCitas';
+
 
 function App() {
+
     return (
         <>    
             <Titulo/>
@@ -15,17 +17,17 @@ function App() {
                         {/* <Subtitulo texto="CREAR MI CITA"/> */}
                         <h2>CREAR MI CITA</h2>
                         <Formulario/>
-                    </div>
+                    </div>   
                     <div className="one-half column">
-                        {/* <Subtitulo texto="Administra tus citas"/>*/}
                         <h2>Administra tus citas</h2>
                         <ListadoCitas/>
-                    </div>
+                    </div>                 
                 </div>
             </div>        
         </>
     );
 }
 
-export default App
 
+
+export default App
