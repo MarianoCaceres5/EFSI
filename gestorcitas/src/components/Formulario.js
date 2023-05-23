@@ -4,14 +4,6 @@ import { useState } from "react";
 
 export default function Formulario({onAgregarCita}) {
 
-    // let camposFormulario = [
-    //     {id:0, label:"Nombre Mascota", type:"text", name:"mascota", placeholder:"Nombre Mascota"},
-    //     {id:1,label:"Nombre Dueño", type:"text", name:"propietario", placeholder:"Nombre dueño de la mascota"},
-    //     {id:2,label:"Fecha", type:"date", name:"fecha"},
-    //     {id:3,label:"Hora", type:"time", name:"hora"},
-    //     // {id:4,label:"Sintomas", type:"textarea", name:"sintomas"}
-    // ]    
-
     const [idState, setId] = useState(1);
     const [mascotaState, setMascota] = useState('');
     const [duenoState, setDueno] = useState('');

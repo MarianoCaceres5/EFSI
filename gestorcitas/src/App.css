@@ -58,6 +58,8 @@ input[type="time"] {
   background: white;
   border-bottom: 1px solid #e1e1e1;
   color: black;
+  margin-top: 20px;
+  border-radius: 1rem;
 }
 
 .cita p {
