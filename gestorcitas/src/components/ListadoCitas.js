@@ -5,8 +5,8 @@ export default function ListadoCitas({listaCitas, onEliminarCita}){
 
     return (
     <>         
-        {listaCitas.map(cita => (
-            <div key={cita.id} className="cita">
+        {listaCitas.map((cita, id) => (
+            <div key={id} className="cita">
                 <Cita citaMostrada={cita} onEliminarCita={onEliminarCita}/>  
             </div>            
         ))}

@@ -3,7 +3,7 @@
 export default function Cita({citaMostrada, onEliminarCita}) {
   
   return (
-    <>
+    <>      
       <p>
         Mascota: <span>{citaMostrada.mascota}</span>
       </p>
