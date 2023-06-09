@@ -1,5 +1,4 @@
 
-
 export default function Cita({citaMostrada, onEliminarCita}) {
   
   return (
@@ -19,7 +18,7 @@ export default function Cita({citaMostrada, onEliminarCita}) {
       <p>
         Sintomas: <span>{citaMostrada.sintomas}</span>
       </p>
-      <button onClick={() => onEliminarCita(citaMostrada.id)}  className="button elimnar u-full-width">Eliminar x </button> {/* se pone el () en el onclick para que no se ejecute todo el tiempo la funcion */}
+      <button onClick={() => onEliminarCita(citaMostrada.id)}  className="button eliminar u-full-width">Eliminar x </button> {/* se pone el () en el onclick para que no se ejecute todo el tiempo la funcion */}
     </>
   );
 }

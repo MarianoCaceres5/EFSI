@@ -77,19 +77,26 @@ input[type="time"] {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
-.button.eliminar,
-.button.eliminar:hover {
-  background-color: #c10059;
-  color: white;
+
+.button.eliminar{
+  background-color: white;
+  color: #c10059;
   margin-top: 2rem;
 }
 
+.button.eliminar:hover {
+  background-color: #c10059;
+  color: white;
+}
+
 .alerta-error {
-  background-color: white;
-  color: red;
+  background-color: red;
+  color: white;
   padding: 1rem;
+  padding-top: 3rem;
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
   font-family: "Staatliches", cursive;
+  margin-bottom: 2rem;
 }
