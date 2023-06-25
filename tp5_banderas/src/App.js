@@ -85,26 +85,28 @@ function App() {
 
   return (
     <>
-      {pais ? (
-        <div className="" >                 
+      {pais ? (    
+        
           <div className="container">   
-            <div className="w-100">
+            <div className="datos">
               <h1>PUNTAJE: {puntos}</h1>
               <h1>TIEMPO: {timer}</h1>     
             </div>  
-            <div className="w-50">
-              <img src={pais.flag} className="bandera" alt="bandera" />
-              <h1 className="ayuda">{ayuda}</h1>
-            </div>
-            <div className="w-50"> 
-              <form onSubmit={(e) => chequearRespuesta(e)}>
-                <input type="text" name="pais" className="text-input" autocomplete="off" placeholder="Nombre pais" />
-                <button type="submit" className="u-full-width button-primary">Enviar Respuesta</button>
-                <button type="button" className="u-full-width button-primary" onClick={() => darAyuda()}>Ayuda</button>
-              </form>              
+            <div className="juego">
+              <div className="w-50">
+                <img src={pais.flag} className="bandera" alt="bandera" />
+                <h1 className="ayuda">{ayuda}</h1>
+              </div>              
+              <div className="w-50"> 
+                <form className='form' onSubmit={(e) => chequearRespuesta(e)}>
+                  <input type="text" name="pais" className="text-input" autocomplete="off" placeholder="" />
+                  <button type="button" className="help-button" onClick={() => darAyuda()}>Ayuda</button>
+                  <button type="submit" className="send-button">Enviar Respuesta</button>
+                </form>              
+              </div>
             </div>
           </div>
-        </div>) : (<div>Loading..</div>)}
+        ) : (<div>Loading..</div>)}
     </>
   );
 }
