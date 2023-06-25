@@ -47,8 +47,11 @@ function App() {
     return Math.floor(Math.random() * max);
   }
 
-  function darAyuda() {
+  function darAyuda() {    
     let letraRandom = pais.name[getNumeroRandom(pais.name.length)]
+    while((letrasAyuda.includes(letraRandom))){
+      letraRandom = pais.name[getNumeroRandom(pais.name.length)]
+    }
     setLetrasAyuda([...letrasAyuda, letraRandom]);
 
     let guiones = '';
@@ -62,6 +65,7 @@ function App() {
       }
     }
     setAyuda(guiones);
+    setTimer(timer-2)
   }
 
   useEffect(() => {
@@ -74,9 +78,7 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (timer > 0) {
-        setTimer(timer - 1)
-      }
+      setTimer(timer - 1)
     }, 1000);
     return () => clearInterval(interval);
   });
@@ -84,18 +86,24 @@ function App() {
   return (
     <>
       {pais ? (
-        <div className="App" >
-          <header className="App-header">
-            <h2>PUNTAJE: {puntos}</h2>
-            <h3>TIEMPO: {timer}</h3>
-            <img src={pais.flag} className="bandera" alt="bandera" />
-            <h1>{ayuda}</h1>
-            <form onSubmit={(e) => chequearRespuesta(e)}>
-              <input type="text" name="pais" className="" placeholder="Nombre pais" />
-              <button type="submit" className="u-full-width button-primary">Enviar Respuesta</button>
-            </form>
-            <button type="button" className="u-full-width button-primary" onClick={() => darAyuda()}>Ayuda</button>
-          </header>
+        <div className="" >                 
+          <div className="container">   
+            <div className="w-100">
+              <h1>PUNTAJE: {puntos}</h1>
+              <h1>TIEMPO: {timer}</h1>     
+            </div>  
+            <div className="w-50">
+              <img src={pais.flag} className="bandera" alt="bandera" />
+              <h1 className="ayuda">{ayuda}</h1>
+            </div>
+            <div className="w-50"> 
+              <form onSubmit={(e) => chequearRespuesta(e)}>
+                <input type="text" name="pais" className="text-input" autocomplete="off" placeholder="Nombre pais" />
+                <button type="submit" className="u-full-width button-primary">Enviar Respuesta</button>
+                <button type="button" className="u-full-width button-primary" onClick={() => darAyuda()}>Ayuda</button>
+              </form>              
+            </div>
+          </div>
         </div>) : (<div>Loading..</div>)}
     </>
   );
