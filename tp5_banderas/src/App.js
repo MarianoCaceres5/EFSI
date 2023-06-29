@@ -78,27 +78,34 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimer(timer - 1)
+      if(timer > 0){
+        setTimer(timer - 1)
+      }else{
+        setPuntos(puntos - 1);
+        setPais(getPaisRandom());
+        setTimer(15)
+        setAyuda('')
+        setLetrasAyuda([])
+      }      
     }, 1000);
     return () => clearInterval(interval);
   });
 
   return (
     <>
-      {pais ? (    
-        
-          <div className="container">   
-            <div className="datos">
-              <h1>PUNTAJE: {puntos}</h1>
-              <h1>TIEMPO: {timer}</h1>     
-            </div>  
+      {pais ? (            
+          <div className="container">                
             <div className="juego">
               <div className="w-50">
+                <div className='datos'>
+                  <h2>Puntaje: <span style={{color:"#1466c3"}}>{puntos}</span></h2>
+                  <h2>Tiempo: <span style={{color:"#1466c3"}}>{timer} segundos</span></h2>  
+                </div>              
                 <img src={pais.flag} className="bandera" alt="bandera" />
                 <h1 className="ayuda">{ayuda}</h1>
               </div>              
               <div className="w-50"> 
-                <form className='form' onSubmit={(e) => chequearRespuesta(e)}>
+                <form className='form' onSubmit={(e) => chequearRespuesta(e)}>                  
                   <input type="text" name="pais" className="text-input" autocomplete="off" placeholder="" />
                   <button type="button" className="help-button" onClick={() => darAyuda()}>Ayuda</button>
                   <button type="submit" className="send-button">Enviar Respuesta</button>

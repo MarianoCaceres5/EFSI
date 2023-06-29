@@ -17,9 +17,9 @@
 }
 
 .w-50{
-  width: 50%;
+  width: 45%;
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -28,10 +28,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 20%;
-  position: relative;
-  top: 70px;
+  justify-content: space-evenly;  
 }
 
 .juego{
@@ -41,11 +38,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  top: -70px;
 }
 
 .text-input{
-  border: 2px solid black;
+  border: 3px solid black;
   outline:none;
   display:inline-block;
   height:80px;
@@ -56,25 +52,29 @@
   padding:0 18px; 
   font-size: 40px;
   margin-bottom: 15px;
-  color: black;
+  color: #1466c3;
+  transition: 125ms all ease-out;
 }
 
+.text-input:focus{
+  border: 3px solid #1466c3;
+}
 .send-button{
   width: 200px;
   height: 50px;
   border-radius: 5px;
-  background-color: gold;
-  border: 2px solid gold;
-  color: black;
+  background-color: #1466c3;
+  border: 2px solid #1466c3;
+  color: white;
   font-size: 15px;
   font-weight: bold;
   transition: 200ms all ease-in-out;
 }
 
 .send-button:hover{
-  background-color: black;
-  border: 2px solid black;
-  color: gold;
+  background-color: white;
+  border: 2px solid white;
+  color: #1466c3;
   cursor: pointer;
 }
 
@@ -93,7 +93,6 @@
 
 .help-button:hover{
   background-color: rgba(216, 216, 216, 0.815);
-  border: 2px solid rgba(216, 216, 216, 0.815);
   color: black;
   cursor: pointer;
 }
@@ -106,14 +105,24 @@
 }
 
 .bandera{
-  width: 80%;
+  margin-top: 30px;
+  width: 100%;
   height: auto;
+  object-fit: cover;
+  max-width: 700px;
+  max-height: 500px;
   border-radius: 20px;
-  border:3px solid black;
+  border:3px solid white;  
+  transition: 200ms all ease-in-out;
+}
+
+.bandera:hover{
+  transform: scale(1.1);
 }
 
 .ayuda{
-  color: gold;
+  margin-top: 20px;
+  color: #377fd1;
 }
 
 
