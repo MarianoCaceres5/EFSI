@@ -10,7 +10,7 @@ function App() {
   const [pais, setPais] = useState(null);
   const [puntos, setPuntos] = useState(0);
   const [timer, setTimer] = useState(15);
-  const [ayuda, setAyuda] = useState('');
+  const [ayuda, setAyuda] = useState('_____');
   const [letrasAyuda, setLetrasAyuda] = useState([]);
 
   let chequearRespuesta = (e) => {
@@ -23,7 +23,7 @@ function App() {
     e.target.pais.value = '';
     setPais(getPaisRandom());
     setTimer(15)
-    setAyuda('')
+    setAyuda('_____')
     setLetrasAyuda([])
   }
 
@@ -38,6 +38,36 @@ function App() {
       });
   }
 
+  function darAyuda() {
+
+    let cantAyudas =  cntDistinct(pais.name)
+
+    if(cantAyudas > letrasAyuda.length){
+      let letraRandom;
+      do {
+        console.log(1)
+        letraRandom = pais.name[getNumeroRandom(pais.name.length)]
+      } while (letrasAyuda.includes(letraRandom));
+
+      setLetrasAyuda([...letrasAyuda, letraRandom]);
+
+      let guiones = '';
+      for (let i = 0; i < pais.name.length; i++) {
+        if (pais.name[i] === ' ') {
+          guiones += ' ';
+        } else if (letrasAyuda.includes(pais.name[i])) {
+          guiones += pais.name[i];
+        } else {
+          guiones += '_';
+        }
+      }
+
+      setAyuda(guiones);
+      setTimer(timer - 2);
+    }
+    
+  }
+
   let getPaisRandom = () => {
     let numRandom = getNumeroRandom(listaPaises.length);
     return listaPaises[numRandom];
@@ -47,25 +77,12 @@ function App() {
     return Math.floor(Math.random() * max);
   }
 
-  function darAyuda() {    
-    let letraRandom = pais.name[getNumeroRandom(pais.name.length)]
-    while((letrasAyuda.includes(letraRandom))){
-      letraRandom = pais.name[getNumeroRandom(pais.name.length)]
+  function cntDistinct(str) {
+    let s = new Set();
+    for (let i = 0; i < str.length; i++) {
+      s.add(str[i]);
     }
-    setLetrasAyuda([...letrasAyuda, letraRandom]);
-
-    let guiones = '';
-    for (let i = 0; i < pais.name.length; i++) {
-      if (pais.name[i] === ' ') {
-        guiones += ' ';
-      } else if(letrasAyuda.includes(pais.name[i])){
-        guiones += pais.name[i];
-      } else {
-        guiones += '_';
-      }
-    }
-    setAyuda(guiones);
-    setTimer(timer-2)
+    return s.size;
   }
 
   useEffect(() => {
@@ -78,42 +95,38 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if(timer > 0){
+      if (timer > 0) {
         setTimer(timer - 1)
-      }else{
+      } else {
         setPuntos(puntos - 1);
         setPais(getPaisRandom());
         setTimer(15)
-        setAyuda('')
-        setLetrasAyuda([])
-      }      
+        setAyuda('_____')
+        setletrasAyuda([])
+      }
     }, 1000);
     return () => clearInterval(interval);
   });
 
   return (
     <>
-      {pais ? (            
-          <div className="container">                
-            <div className="juego">
-              <div className="w-50">
-                <div className='datos'>
-                  <h2>Puntaje: <span style={{color:"#1466c3"}}>{puntos}</span></h2>
-                  <h2>Tiempo: <span style={{color:"#1466c3"}}>{timer} segundos</span></h2>  
-                </div>              
-                <img src={pais.flag} className="bandera" alt="bandera" />
-                <h1 className="ayuda">{ayuda}</h1>
-              </div>              
-              <div className="w-50"> 
-                <form className='form' onSubmit={(e) => chequearRespuesta(e)}>                  
-                  <input type="text" name="pais" className="text-input" autocomplete="off" placeholder="" />
-                  <button type="button" className="help-button" onClick={() => darAyuda()}>Ayuda</button>
-                  <button type="submit" className="send-button">Enviar Respuesta</button>
-                </form>              
+      {pais ? (
+        <div className="container">
+          <div className="juego">
+            <div className="w-50">
+              <div className='datos'>
+                <h2>Puntaje: <span style={{ color: "#1466c3" }}>{puntos}</span></h2>
+                <h2>Tiempo: <span style={{ color: "#1466c3" }}>{timer} segundos</span></h2>
               </div>
+              <img src={pais.flag} className="bandera" alt="bandera" />
+              <h1 className="ayuda">{ayuda}</h1>
+            </div>
+            <div className="w-50">
+              <Formulario chequearRespuesta={chequearRespuesta} darAyuda={darAyuda} ayuda={ayuda}/>
             </div>
           </div>
-        ) : (<div>Loading..</div>)}
+        </div>
+      ) : (<div>Loading..</div>)}
     </>
   );
 }

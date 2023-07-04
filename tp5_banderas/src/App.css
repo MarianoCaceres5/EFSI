@@ -17,7 +17,7 @@
 }
 
 .w-50{
-  width: 45%;
+  width: 50%;
   display: flex;
   align-items: center; 
   justify-content: center;
@@ -59,6 +59,7 @@
 .text-input:focus{
   border: 3px solid #1466c3;
 }
+
 .send-button{
   width: 200px;
   height: 50px;
@@ -93,6 +94,7 @@
 
 .help-button:hover{
   background-color: rgba(216, 216, 216, 0.815);
+  border: 2px solid rgba(216, 216, 216, 0.815);
   color: black;
   cursor: pointer;
 }
@@ -117,12 +119,15 @@
 }
 
 .bandera:hover{
-  transform: scale(1.1);
+  transform: scale(1.05);
+  border: 3px solid #377fd1;
 }
 
 .ayuda{
   margin-top: 20px;
   color: #377fd1;
+  width: 100%;
+  text-align: center;
 }
 
 
