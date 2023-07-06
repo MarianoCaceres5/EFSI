@@ -129,4 +129,10 @@
   text-align: center;
 }
 
+.filtro-verde{
+  filter: blur(2px) grayscale(100%) brightness(80%) sepia(300%) hue-rotate(50deg) saturate(500%);
+}
 
+.filtro-rojo{
+  filter: blur(2px) grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+}

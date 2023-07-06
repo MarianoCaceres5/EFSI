@@ -1,8 +1,8 @@
 
-function Bandera({pais, ayuda}) {
+function Bandera({pais, ayuda, filtro}) {
     return (
-        <>
-            <img src={pais.flag} className="bandera" alt="bandera" />
+        <>            
+            <img src={pais.flag} className={"bandera " + filtro} alt="bandera" />         
             <h1 className="ayuda">{ayuda}</h1>
         </>
     );

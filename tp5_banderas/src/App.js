@@ -14,19 +14,19 @@ function App() {
   const [timer, setTimer] = useState(15);
   const [ayuda, setAyuda] = useState('_____');
   const [letrasAyuda, setLetrasAyuda] = useState([]);
+  const [filtroBandera, setFiltroBandera] = useState('');
 
   let chequearRespuesta = (e) => {
     e.preventDefault();
     if (e.target.pais.value.toLowerCase() === pais.name.toLowerCase()) {
+      setFiltroBandera('filtro-verde');
       setPuntos(puntos + 10 + (timer > 0 ? timer : 0));
     } else {
+      setFiltroBandera('filtro-rojo');
       setPuntos(puntos - 1);
-    }
+    }    
     e.target.pais.value = '';
-    setPais(getPaisRandom());
-    setTimer(15)
-    setAyuda('_____')
-    setLetrasAyuda([])
+    siguienteBandera(2000);
   }
 
   let cargarPaises = async () => {
@@ -42,7 +42,7 @@ function App() {
 
   function darAyuda() {
 
-    let cantAyudas =  cntDistinct(pais.name)
+    let cantAyudas =  cantLetrasDistintas(pais.name);
 
     if(cantAyudas > letrasAyuda.length){
       let letraRandom;
@@ -68,6 +68,17 @@ function App() {
     
   }
 
+  let siguienteBandera = (tiempo) => {
+
+    setTimeout(function(){
+      setFiltroBandera('');
+      setPais(getPaisRandom());
+      setTimer(15)
+      setAyuda('_____')
+      setLetrasAyuda([])
+    }, tiempo);
+  }
+
   let getPaisRandom = () => {
     let numRandom = getNumeroRandom(listaPaises.length);
     return listaPaises[numRandom];
@@ -77,7 +88,7 @@ function App() {
     return Math.floor(Math.random() * max);
   }
 
-  function cntDistinct(str) {
+  function cantLetrasDistintas(str) { 
     let s = new Set();
     for (let i = 0; i < str.length; i++) {
       s.add(str[i]);
@@ -99,10 +110,7 @@ function App() {
         setTimer(timer - 1)
       } else {
         setPuntos(puntos - 1);
-        setPais(getPaisRandom());
-        setTimer(15)
-        setAyuda('_____')
-        setLetrasAyuda([])
+        siguienteBandera(0);
       }
     }, 1000);
     return () => clearInterval(interval);
@@ -115,7 +123,7 @@ function App() {
           <div className="juego">
             <div className="w-50">
               <Datos puntos={puntos} timer={timer} />
-              <Bandera pais={pais} ayuda={ayuda}/>              
+              <Bandera pais={pais} ayuda={ayuda} filtro={filtroBandera}/>              
             </div>
             <div className="w-50">
               <Formulario chequearRespuesta={chequearRespuesta} darAyuda={darAyuda}/>
