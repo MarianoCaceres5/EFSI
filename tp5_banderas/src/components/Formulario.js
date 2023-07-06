@@ -1,5 +1,5 @@
 
-function Formulario({ chequearRespuesta, darAyuda, ayuda }) {
+function Formulario({ chequearRespuesta, darAyuda }) {
 
     return (
         <form className='form' onSubmit={(e) => chequearRespuesta(e)}>

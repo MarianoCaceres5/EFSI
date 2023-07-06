@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Formulario from './components/Formulario';
+import Bandera from './components/Bandera';
+import Datos from './components/Datos';
 
 function App() {
 
@@ -45,7 +47,6 @@ function App() {
     if(cantAyudas > letrasAyuda.length){
       let letraRandom;
       do {
-        console.log(1)
         letraRandom = pais.name[getNumeroRandom(pais.name.length)]
       } while (letrasAyuda.includes(letraRandom));
 
@@ -61,7 +62,6 @@ function App() {
           guiones += '_';
         }
       }
-
       setAyuda(guiones);
       setTimer(timer - 2);
     }
@@ -102,7 +102,7 @@ function App() {
         setPais(getPaisRandom());
         setTimer(15)
         setAyuda('_____')
-        setletrasAyuda([])
+        setLetrasAyuda([])
       }
     }, 1000);
     return () => clearInterval(interval);
@@ -114,15 +114,11 @@ function App() {
         <div className="container">
           <div className="juego">
             <div className="w-50">
-              <div className='datos'>
-                <h2>Puntaje: <span style={{ color: "#1466c3" }}>{puntos}</span></h2>
-                <h2>Tiempo: <span style={{ color: "#1466c3" }}>{timer} segundos</span></h2>
-              </div>
-              <img src={pais.flag} className="bandera" alt="bandera" />
-              <h1 className="ayuda">{ayuda}</h1>
+              <Datos puntos={puntos} timer={timer} />
+              <Bandera pais={pais} ayuda={ayuda}/>              
             </div>
             <div className="w-50">
-              <Formulario chequearRespuesta={chequearRespuesta} darAyuda={darAyuda} ayuda={ayuda}/>
+              <Formulario chequearRespuesta={chequearRespuesta} darAyuda={darAyuda}/>
             </div>
           </div>
         </div>
