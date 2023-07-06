@@ -69,7 +69,6 @@ function App() {
   }
 
   let siguienteBandera = (tiempo) => {
-
     setTimeout(function(){
       setFiltroBandera('');
       setPais(getPaisRandom());
@@ -105,15 +104,17 @@ function App() {
   }, [listaPaises])
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (timer > 0) {
-        setTimer(timer - 1)
-      } else {
-        setPuntos(puntos - 1);
-        siguienteBandera(0);
-      }
-    }, 1000);
-    return () => clearInterval(interval);
+    if(filtroBandera === ''){
+      const interval = setInterval(() => {
+        if (timer > 0) {
+          setTimer(timer - 1)
+        } else {
+          setPuntos(puntos - 1);
+          siguienteBandera(0);
+        }
+      }, 1000);
+      return () => clearInterval(interval);
+    }
   });
 
   return (
