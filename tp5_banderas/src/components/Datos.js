@@ -1,4 +1,6 @@
 
+import PropTypes from 'prop-types'
+
 function Datos({puntos, timer}) {
     return (
         <>
@@ -9,4 +11,10 @@ function Datos({puntos, timer}) {
         </>
     );
 }
+
+Datos.propTypes = {
+    puntos: PropTypes.number,
+    timer: PropTypes.number
+}
+
 export default Datos;

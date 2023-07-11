@@ -1,4 +1,6 @@
 
+import PropTypes from 'prop-types'
+
 function Formulario({ chequearRespuesta, darAyuda }) {
 
     return (
@@ -9,4 +11,10 @@ function Formulario({ chequearRespuesta, darAyuda }) {
         </form>
     );
 }
+
+Formulario.propTypes = {
+    chequearRespuesta: PropTypes.func,
+    darAyuda: PropTypes.func
+}
+
 export default Formulario;
