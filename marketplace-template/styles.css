@@ -39,7 +39,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffa500;
+    color: rgb(245, 181, 53);
 }
 
 main {
@@ -63,6 +63,7 @@ main {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: space-between; /* Add this */
+    padding: 50px 100px 50px 100px;
 }
 
 .contact {
@@ -73,6 +74,10 @@ main {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact:hover {
+    border: 1px solid rgb(245, 181, 53);;
 }
 
 .contact h2 {
@@ -95,7 +100,7 @@ main {
 
 .contact button {
     padding: 0.5rem 1rem;
-    background-color: #ffa500;
+    background-color: rgb(245, 181, 53);
     border: none;
     color: #fff;
     border-radius: 5px;
@@ -107,24 +112,46 @@ main {
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 1rem;
+    max-width: 40%;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    cursor: pointer;
     flex: 1 1 calc(25% - 1rem); /* Adjust this */
+
 }
 
 .product:hover {
     transform: translateY(-5px);
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
+
+.product:hover > .btn{
+    transition: 500ms ease;
+    opacity: 1;
+  }
 
 .product img {
     max-width: 100%;
 }
 
 .btn {
+    opacity: 0;
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #ffa500;
+    background-color: rgb(245, 181, 53);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btnSubmit {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgb(245, 181, 53);
     border: none;
     color: #fff;
     border-radius: 5px;
@@ -134,7 +161,7 @@ main {
 }
 
 .btn:hover {
-    background-color: #ff8000;
+    background-color: rgb(245, 181, 53);
 }
 
 footer {
@@ -169,6 +196,8 @@ footer {
 }
 
 .carousel {
+    
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
     position: relative;
     overflow: hidden;
     margin: 2rem 0;
@@ -208,7 +237,7 @@ footer {
 
 .carousel-prev:hover,
 .carousel-next:hover {
-    color: #ffa500;
+    color: rgb(245, 181, 53);
 }
 
 .carousel-prev {
