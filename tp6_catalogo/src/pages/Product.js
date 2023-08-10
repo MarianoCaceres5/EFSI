@@ -26,7 +26,7 @@ export default function Product({productos}) {
       <main>    
         <section className="product-detail">
           <div className="product-image">
-            <img src="https://www.0800donrouch.com.ar//images/725/DIJE_BABY_ROUCH_CLSICOPLATA_0800_DON_ROUCH2021-12-07-05-32-50pm.png" alt="Product Name" />
+            <img src={producto.img} alt="Product Name" />
           </div>
           <div className="product-info">
             <h1 className="product-name">{producto.name}</h1>

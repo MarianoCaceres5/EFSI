@@ -36,6 +36,7 @@ export default function App() {
             <Route path="/products" element={<Products productos={productos}/>}></Route>
             <Route path="/products/:productId" element={<Product productos={productos}/>}></Route>
             <Route path="/contact" element={<Contact />}></Route>
+            <Route path="*" element={<h1>404</h1>}></Route>
         </Route>
     </Routes>
   </BrowserRouter>
