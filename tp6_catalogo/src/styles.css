@@ -16,11 +16,37 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #000000;
     color: #fff;
-    padding: 1rem;
+    padding: 1rem 5rem 1rem 5rem;
     text-align: center;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.user-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center; /* Add this for vertical alignment */
+}
+
+.user-icons a {
+    font-size: 1.6rem; /* Increase font size */
+    color: rgb(245, 181, 53); /* Gold color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.user-icons a:hover {
+    color: #ffa500;
+}
+
+nav{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav ul {
@@ -32,7 +58,7 @@ nav ul {
 }
 
 nav a {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-decoration: none;
     color: #fff;
     transition: color 0.3s;
@@ -50,7 +76,7 @@ main {
 .logo{
     margin-top: 1%;
     margin-bottom: 0.5%;
-    width: 80px;
+    width: 150px;
     height: auto;
 }
 
@@ -69,7 +95,8 @@ main {
 
 .contact {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto;    
+    margin-top: 3%;
     padding: 2rem;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -120,17 +147,18 @@ main {
     cursor: pointer;
     flex: 1 1 calc(25% - 1rem); /* Adjust this */
     text-align: center;
+    position: relative; /* Added for positioning */
 }
 
 .product:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    box-shadow: 0 0 11px rgb(245, 181, 53, 0.4);
 }
 
 .product:hover > .btn{
     transition: 500ms ease;
     opacity: 1;
-  }
+}
 
 .product img {
     max-width: 100%;
@@ -207,7 +235,6 @@ footer {
 }
 
 .carousel {
-    
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
     position: relative;
     overflow: hidden;
@@ -276,4 +303,68 @@ footer {
     border: 1px solid #ddd;
     border-radius: 3px;
     width: 45%;
+}
+
+.product-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.product-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+    padding: 0 1rem 5rem 1rem;
+    transition: all 500ms ease-in-out;    
+}
+
+.product-image img:hover {
+    box-shadow: 0 0 11px rgb(245, 181, 53, 0.4);
+}
+
+.product-image img {
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: rgb(245, 181, 53);
+    margin-bottom: 1rem;
+}
+
+.btnAddToCart {
+    padding: 0.5rem 1rem;
+    background-color: rgb(245, 181, 53);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnAddToCart:hover {
+    background-color: #ffa500;
 }

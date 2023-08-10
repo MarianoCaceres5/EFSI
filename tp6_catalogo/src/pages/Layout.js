@@ -21,7 +21,11 @@ export default function Layout() {
             </li>
           </ul>
         </nav>
-      </header>
+        <div className="user-icons">
+          <a href="#"><i style={{color: 'rgb(245, 181, 53)'}} className="fas fa-user"></i></a>
+          <a href="#"><i style={{color: 'rgb(245, 181, 53)'}} className="fas fa-shopping-cart"></i></a>
+        </div>
+      </header>      
       <Outlet />
       <footer className="footer">
         <div className="footer-bottom">
