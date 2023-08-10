@@ -33,7 +33,7 @@ export default function Product({productos}) {
             <p className="product-description">
               {producto.detail}
             </p>
-            <p className="product-price">${producto.price}</p>
+            <p className="product-detail-price">${producto.price}</p>
             <button className="btnAddToCart">Add to Cart</button>
           </div>
         </section>

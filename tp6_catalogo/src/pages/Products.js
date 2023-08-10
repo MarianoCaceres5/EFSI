@@ -23,8 +23,8 @@ export default function Products({productos}) {
                     src={producto.img}
                     alt={id}
                 />
-                <h1>Product {id}</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h1 className="product-title">{producto.name}</h1>
+                <p className="product-price">${producto.price}</p>
                 <button className="btn">SEE MORE</button>
             </Link>
         ))}        
