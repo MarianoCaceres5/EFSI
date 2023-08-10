@@ -47,26 +47,7 @@ export default function Layout() {
           <p style={{ fontSize: 1.2 + "rem", fontWeight: "bold" }}>
             &copy; 2023 Diamond Jewellery. All rights reserved.
           </p>
-        </div>
-        <div className="footer-content">
-          <div className="footer-section">
-            <div className="social-icons" style={{ marginTop: 10 + "px" }}>
-              <a href="mesi">
-                <i className="fab fa-facebook" style={{ color: "#ffa500" }}></i>
-              </a>
-              <a href="mesi">
-                <i className="fab fa-twitter" style={{ color: "#ffa500" }}></i>
-              </a>
-              <a href="mesi">
-                <i
-                  className="fab fa-instagram"
-                  style={{ color: "#ffa500" }}
-                ></i>
-              </a>
-              {/* <!-- Add more social media icons as needed --> */}
-            </div>
-          </div>
-        </div>
+        </div>        
       </footer>
     </>
   );

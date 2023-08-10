@@ -10,6 +10,7 @@ li {
 }
 
 body {
+  overflow-x: hidden;
   position: relative;
   margin: 0;
   padding: 0;
@@ -108,7 +109,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: space-between; /* Add this */
+  justify-content: center;
   padding: 50px 100px 130px 100px;
 }
 
@@ -238,7 +239,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 1rem;
   background-color: #fff;
   color: #000;
   text-align: center;
@@ -330,7 +331,10 @@ footer {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  margin-top: 2.3rem;
   border-radius: 5px;
+  width: 90%;
+  margin: auto;
 }
 
 #search,
@@ -377,7 +381,7 @@ footer {
 
 .product-name {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .product-description {
@@ -389,16 +393,23 @@ footer {
   font-size: 1.5rem;
   color: rgb(245, 181, 53);
   margin-bottom: 1rem;
+  font-weight:500;
 }
 
 .btnAddToCart {
   padding: 0.5rem 1rem;
-  background-color: rgb(245, 181, 53);
+  background-color: black;
+  /* background-color: rgb(245, 181, 53); */
   border: none;
   color: #fff;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 200px;
+  height: 4.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+
 }
 
 .btnAddToCart:hover {
@@ -463,3 +474,4 @@ footer {
 a:link {
   text-decoration: none;
 }
+

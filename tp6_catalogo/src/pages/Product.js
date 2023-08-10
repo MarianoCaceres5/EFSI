@@ -30,11 +30,11 @@ export default function Product({productos}) {
           </div>
           <div className="product-info">
             <h1 className="product-name">{producto.name}</h1>
+            <p className="product-detail-price">${producto.price}</p>
             <p className="product-description">
               {producto.detail}
-            </p>
-            <p className="product-detail-price">${producto.price}</p>
-            <button className="btnAddToCart">Add to Cart</button>
+            </p>            
+            <button className="btnAddToCart">ADD TO CART</button>
           </div>
         </section>
       </main>
