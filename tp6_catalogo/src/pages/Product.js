@@ -7,14 +7,16 @@ export default function Product({productos}) {
   const { productId } = useParams();
   const [producto, setProducto] = useState({});
 
-  useEffect(() => {
-    console.log(productos)
+  let loadProduct = () => {
     productos.map(producto => {
       if (producto.id == productId){
-        console.log(producto.id == productId)
         setProducto(producto)
       }
-    })    
+    })  
+  }
+
+  useEffect(() => {
+    loadProduct();  
   }, [productId]);
 
   if(producto === {}){

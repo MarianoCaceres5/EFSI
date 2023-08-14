@@ -5,10 +5,23 @@ import Home from './pages/Home.js'
 import Products from './pages/Products.js'
 import Contact from './pages/Contact.js'
 import Product from './pages/Product.js';
+import axios from 'axios';
 
 export default function App() {
 
   const [productos, setProductos] = useState([]);
+
+  // const callApi = () => {
+  //   axios
+  //   .get("https://fakestoreapi.com/products")
+  //   .then((result) => {    
+  //     console.log(result.data)
+  //     setProductos(result.data)
+  //   })
+  //   .catch((error) => {
+  //       console.log(error);
+  //   });
+  // }
 
   useEffect(() => {
     let listaProductos = [
@@ -20,6 +33,7 @@ export default function App() {
         {id: 5, img: 'https://www.0800donrouch.com.ar//images/571/Chain-pulsera-0800-don-rouch-PLATA2020-10-21-01-37-38pm.jpg', name: 'Product 6', detail: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tristique quam.', price: 199.99, category: 'collars'}
     ]
     setProductos(listaProductos);
+    // callApi();
   }, []);
   
   if(productos === []){
