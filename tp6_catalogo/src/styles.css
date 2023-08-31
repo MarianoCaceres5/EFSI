@@ -110,7 +110,8 @@ main {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  padding: 50px 100px 130px 100px;
+  flex-direction: row;
+  padding: 50px 100px 130px 100px;  
 }
 
 .contact {
@@ -160,7 +161,8 @@ main {
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 1rem 1rem 3rem 1rem;
-  max-width: 40vw;
+  width: 30%;
+  /* max-width: 40vw; */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
@@ -168,6 +170,10 @@ main {
   flex: 1 1 calc(25% - 1rem); /* Adjust this */
   text-align: center;
   position: relative; /* Added for positioning */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .product:hover {
@@ -478,3 +484,6 @@ a:link {
   text-decoration: none;
 }
 
+.product-img{
+  width: 75%;
+}

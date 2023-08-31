@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
+import { CategoriesContext } from "../context/CategoriesContext";
 
 export default function Search({handleFilter, handleInput}) {
+
+  const {categories} = useContext(CategoriesContext);
+
   return (
     <section className="search-filter">
       <label>Search:</label>
@@ -14,10 +18,9 @@ export default function Search({handleFilter, handleInput}) {
       />
       <label>Filter By:</label>
       <select id="category" onChange={handleFilter}>
-        <option value="all">All Categories</option>
-        <option value="rings">Rings</option>
-        <option value="collars">Collars</option>
-        <option value="earrings">Earrings</option>
+        {categories.map((categorie, id) => 
+          <option key={id} value={categorie}>{categorie.toUpperCase()}</option>
+        )}
       </select>
     </section>
   );

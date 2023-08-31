@@ -1,25 +1,30 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function Product({productos}) {
 
   const { productId } = useParams();
-  const [producto, setProducto] = useState({});
+  const [producto, setProducto] = useState({images: []});
 
-  let loadProduct = () => {
-    productos.map(producto => {
-      if (producto.id == productId){
-        setProducto(producto)
-      }
-    })  
+  let loadProduct = () => {    
+    axios
+      .get("https://dummyjson.com/products/1"+productId)
+      .then((result) => {
+        console.log(result.data.images)
+        setProducto(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   useEffect(() => {
     loadProduct();  
   }, [productId]);
 
-  if(producto === {}){
+  if(producto === {} && producto !== undefined && producto !== null && producto.images !== undefined){
     return(
         <><div>Loading...</div></>
     )
@@ -28,13 +33,13 @@ export default function Product({productos}) {
       <main>    
         <section className="product-detail">
           <div className="product-image">
-            <img src={producto.img} alt="Product Name" />
+            <img src={producto.images[1]} alt="Product Name" />
           </div>
           <div className="product-info">
-            <h1 className="product-name">{producto.name}</h1>
+            <h1 className="product-name">{producto.title}</h1>
             <p className="product-detail-price">${producto.price}</p>
             <p className="product-description">
-              {producto.detail}
+              {producto.description}
             </p>            
             <button className="btnAddToCart">ADD TO CART</button>
           </div>

@@ -15,27 +15,34 @@ export default function Home({productos}) {
     }
   ];
 
-  return (
-    <>
-      <main>  
-        <ImageSlider slides={sliderData} />;        
-        <section className="product-list">
-        {productos.map((producto, id) => (
-          id < 6 ? (
-            <Link key={id} className="product" to={"products/"+id} data-category="collars">
-                <img
-                    src={producto.img}
-                    alt={id}
-                />
-                <button className="btn">SEE MORE</button>
-            </Link>
-          ) : (
-            <div></div>
-          )
-
-        ))}        
-      </section>
-      </main>
-    </>
-  );
+  if(productos === undefined || productos === null){
+    return(
+      <div>Loading...</div>
+    )
+  }else{
+    return (
+      <>
+        <main>  
+          <ImageSlider slides={sliderData} />;        
+          <section className="product-list">
+          {productos.map((producto) => (
+            producto.id <= 6 ? (
+              <Link key={producto.id} className="product" to={"products/"+producto.id}>
+                  <img
+                    className="product-img"
+                    src={producto.images[1]}
+                    alt={producto.id}
+                  />
+                  <button className="btn">SEE MORE</button>
+              </Link>
+            ) : (
+              <div></div>
+            )
+  
+          ))}        
+        </section>
+        </main>
+      </>
+    );
+  }
 }

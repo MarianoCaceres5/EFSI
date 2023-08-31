@@ -1,41 +1,63 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import Search from "../components/Search";
+import axios from "axios";
 
 export default function Products({ productos }) {
-  const [busqueda, setBusqueda] = useState("");
-  const [filtro, setFiltro] = useState("all");
 
+  const [listadoProductos, setListadoProductos] = useState([]);
+  
   const handleInput = (e) => {
-    setBusqueda(e.target.value.toLowerCase());
+    axios
+    .get("https://dummyjson.com/products/search?q="+e.target.value.toLowerCase())
+    .then((result) => {
+      setListadoProductos(result.data.products);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   const handleFilter = (e) => {
-    setFiltro(e.target.value.toLowerCase());
+    axios
+    .get("https://dummyjson.com/products/category/"+e.target.value.toLowerCase())
+    .then((result) => {
+      setListadoProductos(result.data.products);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
+  
+  useEffect(() => {
+    setListadoProductos(productos) 
+  }, []);
 
-  return (
-    <main>
-      <Search handleInput={handleInput} handleFilter={handleFilter}/>
-      <section className="product-list">
-        {productos.map((producto, id) =>
-          producto.name.toLowerCase().includes(busqueda) && (producto.category.toLowerCase() === filtro || filtro === 'all') ? (
-            <Link
-              key={id}
-              className="product"
-              to={"http://localhost:3000/products/" + id}
-              data-category="collars"
-            >
-              <img src={producto.img} alt={id} />
-              <h1 className="product-title">{producto.name}</h1>
-              <p className="product-price">${producto.price}</p>
-              <button className="btn">SEE MORE</button>
-            </Link>
-          ) : (
-            <div key={id}></div>
-          )
-        )}
-      </section>
-    </main>
-  );
+  if(listadoProductos === undefined || listadoProductos === null){
+    return(
+      <div>Loading...</div>
+    )
+  }
+  else{
+    return (
+      <main>
+        <Search handleInput={handleInput} handleFilter={handleFilter}/>
+        <section className="product-list">
+          {listadoProductos.map((producto) =>            
+              <Link
+                key={producto.id}
+                className="product"
+                to={"http://localhost:3000/products/" + producto.id}
+                data-category="collars"
+              >
+                <img src={producto.images[1]} alt={producto.id} />
+                <h1 className="product-title">{producto.title}</h1>
+                <p className="product-price">${producto.price}</p>
+                <button className="btn">SEE MORE</button>
+              </Link>            
+          )}
+        </section>
+      </main>
+    );
+  }
 }
