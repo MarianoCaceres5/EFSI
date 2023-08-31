@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function Product({productos}) {
+export default function Product() {
 
   const { productId } = useParams();
   const [producto, setProducto] = useState({images: []});
 
   let loadProduct = () => {    
     axios
-      .get("https://dummyjson.com/products/1"+productId)
+      .get("https://dummyjson.com/products/"+productId)
       .then((result) => {
         console.log(result.data.images)
         setProducto(result.data);

@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import slider3 from "../images/slider3.jpg";
 import slider2 from "../images/slider2.png";
 import { Link } from "react-router-dom";
 import ImageSlider from "../components/ImageSlider";
+import { ProductsContext } from "../context/ProductsContext";
 
-export default function Home({productos}) {
+export default function Home() {
+
+  const {products} = useContext(ProductsContext);
   
   let sliderData = [
     {
@@ -15,7 +18,7 @@ export default function Home({productos}) {
     }
   ];
 
-  if(productos === undefined || productos === null){
+  if(products === undefined || products === null || products === []){
     return(
       <div>Loading...</div>
     )
@@ -25,7 +28,7 @@ export default function Home({productos}) {
         <main>  
           <ImageSlider slides={sliderData} />;        
           <section className="product-list">
-          {productos.map((producto) => (
+          {products.map((producto) => (
             producto.id <= 6 ? (
               <Link key={producto.id} className="product" to={"products/"+producto.id}>
                   <img

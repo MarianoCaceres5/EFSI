@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect} from "react";
+import { useState, useContext} from "react";
 import Search from "../components/Search";
 import axios from "axios";
+import { ProductsContext } from "../context/ProductsContext";
 
-export default function Products({ productos }) {
-
-  const [listadoProductos, setListadoProductos] = useState([]);
+export default function Products() {
+  
+  let {products} = useContext(ProductsContext);
+  const [listadoProductos, setListadoproductos] = useState(products);
   
   const handleInput = (e) => {
     axios
     .get("https://dummyjson.com/products/search?q="+e.target.value.toLowerCase())
     .then((result) => {
-      setListadoProductos(result.data.products);
+      setListadoproductos(result.data.products);
     })
     .catch((error) => {
       console.log(error);
@@ -22,18 +24,14 @@ export default function Products({ productos }) {
     axios
     .get("https://dummyjson.com/products/category/"+e.target.value.toLowerCase())
     .then((result) => {
-      setListadoProductos(result.data.products);
+      setListadoproductos(result.data.products);
     })
     .catch((error) => {
       console.log(error);
     });
   };
-  
-  useEffect(() => {
-    setListadoProductos(productos) 
-  }, []);
 
-  if(listadoProductos === undefined || listadoProductos === null){
+  if(products === undefined || products === null){
     return(
       <div>Loading...</div>
     )
