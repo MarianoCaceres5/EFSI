@@ -47,7 +47,7 @@ export default function Products() {
                 className="product"
                 to={"http://localhost:3000/products/" + producto.id}
               >
-                <img src={producto.images[0]} alt={producto.id} />
+                <img src={producto.images[0]} alt={producto.id} />                
                 <h3 className="product-title">{producto.title.toUpperCase()}</h3>
                 <p className="product-price">${producto.price}</p>
                 <button className="btn">SEE MORE</button>

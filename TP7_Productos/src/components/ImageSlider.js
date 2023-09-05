@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "../styles.css";
+import PropTypes from 'prop-types'
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -16,12 +17,11 @@ const ImageSlider = ({ slides }) => {
 
   useEffect(() => {
     const interval = setTimeout(() => {
-        console.log('next')
       nextSlide();
     }, 3000);
   });
 
-  if (!Array.isArray(slides) || slides.length <= 0) {
+  if (slides.length <= 0) {
     return null;
   }
 
@@ -44,5 +44,9 @@ const ImageSlider = ({ slides }) => {
     </section>
   );
 };
+
+ImageSlider.propTypes = {
+  slides: PropTypes.array,
+}
 
 export default ImageSlider;

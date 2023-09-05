@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import { CategoriesContext } from "../context/CategoriesContext";
+import PropTypes from 'prop-types'
 
 export default function Search({handleFilter, handleInput}) {
 
@@ -24,4 +25,9 @@ export default function Search({handleFilter, handleInput}) {
       </select>
     </section>
   );
+}
+
+Search.propTypes = {
+  handleFilter: PropTypes.func,
+  handleInput: PropTypes.func,
 }

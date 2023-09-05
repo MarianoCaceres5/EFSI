@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import SimpleImageSlider from "react-simple-image-slider";
 
 export default function Product() {
 
@@ -33,7 +34,12 @@ export default function Product() {
       <main>    
         <section className="product-detail">
           <div className="product-image">
-            <img src={producto.images[1]} alt="Product Name" />
+            <SimpleImageSlider              
+              width={'90%'}
+              height={500}
+              images={producto.images}
+              showBullets={true}
+            />
           </div>
           <div className="product-info">
             <h1 className="product-name">{producto.title}</h1>
