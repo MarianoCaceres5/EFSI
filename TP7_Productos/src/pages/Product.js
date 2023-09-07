@@ -13,7 +13,6 @@ export default function Product() {
     axios
       .get("https://dummyjson.com/products/"+productId)
       .then((result) => {
-        console.log(result.data.images)
         setProducto(result.data);
       })
       .catch((error) => {
@@ -25,7 +24,7 @@ export default function Product() {
     loadProduct();  
   }, [productId]);
 
-  if(producto === {} && producto !== undefined && producto !== null && producto.images !== undefined){
+  if(producto === {} || producto === undefined || producto === null || producto.images === undefined || producto.images === null){
     return(
         <><div>Loading...</div></>
     )
@@ -35,7 +34,7 @@ export default function Product() {
         <section className="product-detail">
           <div className="product-image">
             <SimpleImageSlider              
-              width={'90%'}
+              width={'80%'}
               height={500}
               images={producto.images}
               showBullets={true}

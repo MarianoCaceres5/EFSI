@@ -372,6 +372,7 @@ footer {
 }
 
 .product-image {
+  text-align: center;
   position: relative;
   display: flex;
   justify-content: center;
@@ -381,7 +382,6 @@ footer {
   text-align: center; 
   transition: all 500ms ease-in-out;
   overflow: hidden;
-  object-fit: cover;
 }
 
 .product-image img {
@@ -390,10 +390,6 @@ footer {
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.product-image img:hover {
-  box-shadow: 0 0 11px rgb(245, 181, 53, 0.4);
 }
 
 .product-info {

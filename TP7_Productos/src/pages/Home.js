@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import slider3 from "../images/slider3.jpg";
 import slider2 from "../images/slider2.png";
-import { Link } from "react-router-dom";
 import { ProductsContext } from "../context/ProductsContext";
 import SimpleImageSlider from "react-simple-image-slider";
+import Product from "../components/Product";
 
 export default function Home() {
   const { products } = useContext(ProductsContext);
@@ -24,29 +24,20 @@ export default function Home() {
       <>
         <main>
           <div className='slider-container'>
-            <SimpleImageSlider              
+            <SimpleImageSlider
               width={'90%'}
               height={300}
               images={sliderData}
               showBullets={true}
               showNavs={true}
+              autoPlay={true}
+              autoPlayDelay={2.0}
             />
-          </div>          
+          </div>
           <section className="product-list">
             {products.map((producto) =>
               producto.id <= 6 ? (
-                <Link
-                  key={producto.id}
-                  className="product"
-                  to={"products/" + producto.id}
-                >
-                  <img
-                    className="product-img"
-                    src={producto.images[0]}
-                    alt={producto.id}
-                  />
-                  <button className="btn">SEE MORE</button>
-                </Link>
+                <Product producto={producto} url={"products/" + producto.id} showProductDetail={false}/>
               ) : (
                 <></>
               )

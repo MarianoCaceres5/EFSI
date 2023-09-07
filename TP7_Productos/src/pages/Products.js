@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import { useState, useContext} from "react";
 import Search from "../components/Search";
 import axios from "axios";
 import { ProductsContext } from "../context/ProductsContext";
+import Product from "../components/Product";
 
 export default function Products() {
   
@@ -41,17 +41,8 @@ export default function Products() {
       <main>
         <Search handleInput={handleInput} handleFilter={handleFilter}/>
         <section className="product-list">
-          {listadoProductos.map((producto) =>            
-              <Link
-                key={producto.id}
-                className="product"
-                to={"http://localhost:3000/products/" + producto.id}
-              >
-                <img src={producto.images[0]} alt={producto.id} />                
-                <h3 className="product-title">{producto.title.toUpperCase()}</h3>
-                <p className="product-price">${producto.price}</p>
-                <button className="btn">SEE MORE</button>
-              </Link>            
+          {listadoProductos.map((producto) =>     
+            <Product producto={producto} url={"http://localhost:3000/products/" + producto.id} showProductDetail={true}/>           
           )}
         </section>
       </main>
