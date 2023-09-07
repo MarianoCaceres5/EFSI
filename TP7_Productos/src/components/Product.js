@@ -20,6 +20,7 @@ export default function Product({ producto, url, showProductDetail }) {
 }
 
 Product.propTypes = {
+  producto: PropTypes.object,
   url: PropTypes.string,
   showProductDetail: PropTypes.bool,
 };
