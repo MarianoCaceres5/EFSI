@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 import "../styles.css";
+import { CheckoutContext } from "../context/CheckoutContext";
 
 export default function Header() {
+
+  let {products} = useContext(CheckoutContext);
+
   return (
     <header>
       <Link to="/">
@@ -20,18 +24,20 @@ export default function Header() {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          
         </ul>
       </nav>
       <div className="user-icons">
-        <a href="#">
+        <Link to="/">
           <i style={{ color: "rgb(245, 181, 53)" }} className="fas fa-user"></i>
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="/checkout">
+          <h3 className="checkoutProductsNumber">{products.length}</h3>
           <i
             style={{ color: "rgb(245, 181, 53)" }}
             className="fas fa-shopping-cart"
           ></i>
-        </a>
+        </Link>
       </div>
     </header>
   );

@@ -1,11 +1,13 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import SimpleImageSlider from "react-simple-image-slider";
+import { CheckoutContext } from "../context/CheckoutContext";
 
 export default function Product() {
 
+  let {addProduct} = useContext(CheckoutContext);
   const { productId } = useParams();
   const [producto, setProducto] = useState({images: []});
 
@@ -46,7 +48,7 @@ export default function Product() {
             <p className="product-description">
               {producto.description}
             </p>            
-            <button className="btnAddToCart">ADD TO CART</button>
+            <button className="btnAddToCart" onClick={() => addProduct(producto)}>ADD TO CART</button>
           </div>
         </section>
       </main>

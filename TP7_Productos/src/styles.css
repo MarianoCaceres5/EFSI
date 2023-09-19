@@ -503,3 +503,31 @@ a:link {
 .product-img{
   width: 75%;
 }
+
+.checkoutContainer{
+  margin: auto;  
+  margin-top: 50px;
+  margin-bottom: 150px;
+  width: 60%;
+}
+
+.productCheckout{
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.301);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px 0 60px;  
+}
+
+.productCheckout:hover{
+  border: 1px solid rgb(245, 181, 53);  
+}
+
+.checkoutProductsNumber{
+  position: absolute;
+  color: red;
+  border: 1px solid red;
+}
