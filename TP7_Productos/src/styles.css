@@ -508,11 +508,10 @@ a:link {
   margin: auto;  
   margin-top: 50px;
   margin-bottom: 150px;
-  width: 60%;
+  width: 70%;
 }
 
 .productCheckout{
-  width: 100%;
   height: 200px;
   margin-top: 10px;
   border: 1px solid rgba(128, 128, 128, 0.301);
@@ -520,14 +519,65 @@ a:link {
   align-items: center;
   justify-content: space-between;
   padding: 0 80px 0 60px;  
+  background-color: white;
 }
 
 .productCheckout:hover{
   border: 1px solid rgb(245, 181, 53);  
 }
 
+.userIcon{
+  color: rgb(245, 181, 53);
+  transition: all 500ms ease;
+}
+
+.cartIcon{
+  color: rgb(245, 181, 53);
+  transition: all 500ms ease;
+}
+
+.checkoutHeader{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .checkoutProductsNumber{
-  position: absolute;
-  color: red;
-  border: 1px solid red;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;  
+  padding: 2px;
+  width: 30px;
+  margin-left: 5px;
+  border-radius: 100%;
+  background-color: rgb(245, 181, 53);
+}
+
+.buttonCheckoutContainer{
+  margin-top: 40px;
+  width: 100%;
+  border-top: 1px solid rgba(128, 128, 128, 0.486);
+  display: flex;
+  flex-direction: row;  
+  justify-content: end;
+}
+
+.buttonCheckout{
+  padding: 0.5rem 1rem;
+  background-color: black;
+  /* background-color: rgb(245, 181, 53); */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 200px;
+  height: 4.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.buttonCheckout:hover {
+  background-color: #ffa500;
+  border: #ffa500;
 }

@@ -1,25 +1,22 @@
 import React from 'react'
 import { useContext } from 'react'
 import { CheckoutContext } from '../context/CheckoutContext';
+import CheckoutProduct from '../components/CheckoutProduct';
 
 export default function Checkout() {
 
   let {products} = useContext(CheckoutContext);
-  console.log(products)
 
   return (
     <>
-     <main>
+     <main>      
       <div className='checkoutContainer'>
         {products.map((product,id) => (
-          <div key={id} className='productCheckout'>
-            <div>
-              <h1>{product.title}</h1>
-              <h2 >${product.price}</h2>
-            </div>
-            <img src={product.images[1]} className="logo" alt="" />
-          </div>          
+          <CheckoutProduct key={id} product={product}/>   
         ))}
+        <div className='buttonCheckoutContainer'>
+          <button className='buttonCheckout'>CHECKOUT</button>
+        </div>        
       </div>
       </main>
     </>

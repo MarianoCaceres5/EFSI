@@ -29,14 +29,15 @@ export default function Header() {
       </nav>
       <div className="user-icons">
         <Link to="/">
-          <i style={{ color: "rgb(245, 181, 53)" }} className="fas fa-user"></i>
+          <i className="fas fa-user userIcon"></i>
         </Link>
         <Link to="/checkout">
-          <h3 className="checkoutProductsNumber">{products.length}</h3>
-          <i
-            style={{ color: "rgb(245, 181, 53)" }}
-            className="fas fa-shopping-cart"
-          ></i>
+          <div className="checkoutHeader">            
+            <i
+              className="fas fa-shopping-cart cartIcon"
+            ></i>
+            <p className="checkoutProductsNumber">{products.length}</p>
+          </div>
         </Link>
       </div>
     </header>
