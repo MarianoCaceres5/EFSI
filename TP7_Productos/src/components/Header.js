@@ -6,7 +6,7 @@ import { CheckoutContext } from "../context/CheckoutContext";
 
 export default function Header() {
 
-  let {products} = useContext(CheckoutContext);
+  let {cantProducts} = useContext(CheckoutContext);
 
   return (
     <header>
@@ -36,7 +36,7 @@ export default function Header() {
             <i
               className="fas fa-shopping-cart cartIcon"
             ></i>
-            <p className="checkoutProductsNumber">{products.length}</p>
+            <p className="checkoutProductsNumber">{cantProducts}</p>
           </div>
         </Link>
       </div>

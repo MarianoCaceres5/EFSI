@@ -554,18 +554,17 @@ a:link {
 }
 
 .buttonCheckoutContainer{
-  margin-top: 40px;
   width: 100%;
-  border-top: 1px solid rgba(128, 128, 128, 0.486);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;  
   justify-content: end;
 }
 
 .buttonCheckout{
   padding: 0.5rem 1rem;
+  margin-top: 3rem;
   background-color: black;
-  /* background-color: rgb(245, 181, 53); */
   border: none;
   color: #fff;
   cursor: pointer;
@@ -573,11 +572,23 @@ a:link {
   width: 200px;
   height: 4.5rem;
   font-size: 1rem;
-  font-weight: bold;
-  margin-top: 1.5rem;
+  font-weight: bold; 
+  position: relative;
+  left: 100;
 }
 
 .buttonCheckout:hover {
   background-color: #ffa500;
   border: #ffa500;
+}
+
+.totalPriceContainer{
+  margin-top: 40px;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.486);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;  
+  width: 100%;
+  justify-content: space-between;
 }
