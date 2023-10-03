@@ -4,7 +4,7 @@ import { CheckoutContext } from "../context/CheckoutContext";
 import CheckoutProduct from "../components/CheckoutProduct";
 
 export default function Checkout() {
-  let { products, totalPrice } = useContext(CheckoutContext);
+  let { products, totalPrice, clearProducts } = useContext(CheckoutContext);
 
   return (
     <>
@@ -14,7 +14,7 @@ export default function Checkout() {
             <CheckoutProduct key={id} product={product} />
           ))}
           <div className="buttonCheckoutContainer">
-            <button className="buttonCheckout">CHECKOUT</button>
+            <button onClick={() => clearProducts()} className="buttonCheckout">CHECKOUT</button>
           </div>
           <div className="totalPriceContainer">
             <h1>TOTAL: </h1>
