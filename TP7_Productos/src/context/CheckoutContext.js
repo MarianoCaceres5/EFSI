@@ -22,7 +22,7 @@ const CheckoutProvider = (props) => {
 
   const clearProducts = () => {
     setProducts([])
-    localStorage.setItem(KEY_PRODUCTS, JSON.stringify(products));
+    localStorage.setItem(KEY_PRODUCTS, JSON.stringify([]));
   }
 
   const addProduct = (product) => {
@@ -30,7 +30,7 @@ const CheckoutProvider = (props) => {
         ...products,
         product
     ])
-    localStorage.setItem(KEY_PRODUCTS, JSON.stringify(products));
+    localStorage.setItem(KEY_PRODUCTS, JSON.stringify([...products, product]));
   }
 
   const updateTotalPrice = () => {

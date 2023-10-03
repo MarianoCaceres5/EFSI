@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-bottom">
         <p style={{ fontSize: 1.2 + "rem", fontWeight: "bold" }}>
-          &copy; 2023 Diamond Jewellery. All rights reserved.
+          &copy; 2023 Diamond Store. All rights reserved.
         </p>
       </div>
     </footer>
