@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import axios from "axios";
 
 export const CheckoutContext = createContext();
 
@@ -33,6 +32,12 @@ const CheckoutProvider = (props) => {
     localStorage.setItem(KEY_PRODUCTS, JSON.stringify([...products, product]));
   }
 
+  const deleteProduct = (deletedProduct) => {
+    let newArray = products.filter(product => product !== deletedProduct);
+    setProducts(newArray);
+    localStorage.setItem(KEY_PRODUCTS, JSON.stringify(newArray));
+  }
+
   const updateTotalPrice = () => {
     let price = 0;
     products.map((product) => {
@@ -58,7 +63,8 @@ const CheckoutProvider = (props) => {
           addProduct,
           cantProducts,
           totalPrice,
-          clearProducts
+          clearProducts,
+          deleteProduct
         }}
       >
         {props.children}

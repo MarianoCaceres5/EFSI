@@ -518,8 +518,9 @@ a:link {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 80px 0 60px;  
+  padding: 0 90px 0 60px;  
   background-color: white;
+  position: relative;
 }
 
 .productCheckout:hover{
@@ -591,4 +592,22 @@ a:link {
   flex-direction: row;  
   width: 100%;
   justify-content: space-between;
+}
+
+.deleteContainer{
+  width: 5%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background-color: rgba(128, 128, 128, 0.205);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteIcon{
+  width: 20px;
+  height: auto;
 }
