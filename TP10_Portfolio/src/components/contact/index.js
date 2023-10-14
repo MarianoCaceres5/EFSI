@@ -69,13 +69,7 @@ export const ContactUs = () => {
   };
 
   return (
-    <HelmetProvider>
-      <Container>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>{meta.title + ' | Contact '}</title>
-          <meta name="description" content={meta.description} />
-        </Helmet>
+    <>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
             <h1 className="display-4 mb-4">Contact Me</h1>
@@ -164,8 +158,6 @@ export const ContactUs = () => {
             </form>
           </Col>
         </Row>
-      </Container>
-      <div className={formData.loading ? "loading-bar" : "d-none"}></div>
-    </HelmetProvider>
+        </>
   );
 };

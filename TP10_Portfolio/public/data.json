@@ -1,11 +1,11 @@
 {
     "logotext": "Mariano Cáceres",
     "meta": {
-        "title": "John Doe",
-        "description": "I’m John Doe data scientist _ Full stack devloper,currently working in Berlin"
+        "title": "Mariano Cáceres",
+        "description": "I’m Mariano Cáceres data scientist _ Full stack devloper,currently working in Argentina"
     },
     "introdata": {
-        "title": "I’m John Doe",
+        "title": "I’m Mariano Cáceres",
         "animated": {
             "first": "I love coding",
             "second": "I code cool websites",
@@ -15,7 +15,7 @@
         "your_img_url": "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d"
     },
     "dataabout": {
-        "title": "a bit about my self",
+        "title": "A bit about my self",
         "aboutme": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla. Nunc non commodo dolor. Nunc mollis dignissim facilisis. Morbi ut magna ultricies."
     },
     "worktimeline": [
@@ -73,68 +73,92 @@
     ],
     "dataportfolio": [
         {
+            "id": 1,
             "img": "https://picsum.photos/400/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/1"
         },
         {
+            "id": 2,
             "img": "https://picsum.photos/400/800/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/2"
         },
         {
+            "id": 3,
             "img": "https://picsum.photos/400/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/3"
         },
         {
+            "id": 4,
             "img": "https://picsum.photos/400/600/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/4"
         },
         {
+            "id": 5,
             "img": "https://picsum.photos/400/300/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/5"
         },
         {
+            "id": 6,
             "img": "https://picsum.photos/400/700/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/6"
         },
         {
+            "id": 7,
             "img": "https://picsum.photos/400/600/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/7"
         },
         {
+            "id": 8,
             "img": "https://picsum.photos/400/300/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/8"
         },
         {
+            "id": 9,
             "img": "https://picsum.photos/400/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/9"
         },
         {
+            "id": 10,
             "img": "https://picsum.photos/400/550/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/10"
         },
         {
+            "id": 11,
             "img": "https://picsum.photos/400/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/11"
         },
         {
+            "id": 12,
             "img": "https://picsum.photos/400/700/?grayscale",
+            "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
-            "link": "#"
+            "link": "/portfolio/12"
         }
     ],
     "contactConfig": {
-        "YOUR_EMAIL": "name@domain.com",
+        "YOUR_EMAIL": "46956818@est.ort.edu.ar",
         "YOUR_FONE": "(555)123-4567",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
         "YOUR_SERVICE_ID": "service_id",
