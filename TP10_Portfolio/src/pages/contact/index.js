@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import * as emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
-import { contactConfig } from "../../content_option";
+import { MetaContext } from "../../context/MetaContext";
+import { ContactConfigContext } from "../../context/ContactConfigContext";
 
 export const ContactUs = () => {
+
+  let { meta } = useContext(MetaContext);
+  let { contactConfig } = useContext(ContactConfigContext);
+
   const [formData, setFormdata] = useState({
     email: "",
     name: "",
@@ -69,7 +73,7 @@ export const ContactUs = () => {
       <Container>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{meta.title} | Contact</title>
+          <title>{meta.title + ' | Contact '}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">

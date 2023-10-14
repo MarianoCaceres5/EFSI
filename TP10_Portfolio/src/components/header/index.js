@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import { logotext ,socialprofils } from "../content_option";
-import Themetoggle from "../components/themetoggle";
+import Themetoggle from "../themetoggle";
+import { LogoTextContext } from "../../context/LogoTextContext";
+import { SocialProfilsContext } from "../../context/SocialProfilsContext";
 
 const Headermain = () => {
+
+  let { logoText } = useContext(LogoTextContext);
+  let { socialProfils } = useContext(SocialProfilsContext);
+
   const [isActive, setActive] = useState("false");
 
   const handleToggle = () => {
@@ -18,7 +23,7 @@ const Headermain = () => {
       <header className="fixed-top site__header">
         <div className="d-flex align-items-center justify-content-between">
           <Link  className="navbar-brand nav_ac" to="/">
-            {logotext}
+            {logoText}
           </Link>
           <div className="d-flex align-items-center">
           <Themetoggle />
@@ -38,13 +43,16 @@ const Headermain = () => {
                   <Link  onClick={handleToggle} to="/" className="my-3">Home</Link>
                   </li>
                   <li className="menu_item">
-                    <Link  onClick={handleToggle} to="/portfolio" className="my-3"> Portfolio</Link>
+                    <Link  onClick={handleToggle} to="/portfolio" className="my-3">Portfolio</Link>
                   </li>
                   <li className="menu_item">
                   <Link onClick={handleToggle} to="/about" className="my-3">About</Link>
                   </li>
                   <li className="menu_item">
-                  <Link onClick={handleToggle} to="/contact" className="my-3"> Contact</Link>
+                  <Link onClick={handleToggle} to="/contact" className="my-3">Contact</Link>
+                  </li>
+                  <li className="menu_item">
+                  <Link onClick={handleToggle} to="/favorites" className="my-3">Favorites</Link>
                   </li>
                 </ul>
               </div>
@@ -52,11 +60,11 @@ const Headermain = () => {
           </div>
           <div className="menu_footer d-flex flex-column flex-md-row justify-content-between align-items-md-center position-absolute w-100 p-3">
             <div className="d-flex">
-            <a href={socialprofils.facebook}>Facebook</a>
-            <a href={socialprofils.github}>Github</a>
-            <a href={socialprofils.twitter}>Twitter</a>
+            <a href={socialProfils.facebook}>Facebook</a>
+            <a href={socialProfils.github}>Github</a>
+            <a href={socialProfils.twitter}>Twitter</a>
             </div>
-            <p className="copyright m-0">copyright __ {logotext}</p>
+            <p className="copyright m-0">copyright __ {logoText}</p>
           </div>
         </div>
       </header>

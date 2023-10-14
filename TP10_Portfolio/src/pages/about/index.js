@@ -1,22 +1,27 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  dataabout,
-  meta,
-  worktimeline,
-  skills,
-  services,
-} from "../../content_option";
+import { DataAboutContext } from "../../context/DataAboutContext";
+import { MetaContext } from "../../context/MetaContext";
+import { WorkTimeLineContext } from "../../context/WorkTimeLineContext";
+import { SkillsContext } from "../../context/SkillsContext";
+import { ServicesContext } from "../../context/ServicesContext";
 
 export const About = () => {
+  
+  let { dataAbout } = useContext(DataAboutContext);
+  let { meta } = useContext(MetaContext);
+  let { workTimeLine } = useContext(WorkTimeLineContext);
+  let { skills } = useContext(SkillsContext);
+  let { services } = useContext(ServicesContext);
+
   return (
     <HelmetProvider>
       <Container className="About-header">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> About | {meta.title}</title>
+          <title>{ "About | " + meta.title }</title>
           <meta name="description" content={meta.description} />
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
@@ -27,11 +32,11 @@ export const About = () => {
         </Row>
         <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">{dataabout.title}</h3>
+            <h3 className="color_sec py-4">{dataAbout.title}</h3>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <div>
-              <p>{dataabout.aboutme}</p>
+              <p>{dataAbout.aboutme}</p>
             </div>
           </Col>
         </Row>
@@ -42,7 +47,7 @@ export const About = () => {
           <Col lg="7">
             <table className="table caption-top">
               <tbody>
-                {worktimeline.map((data, i) => {
+                {workTimeLine.map((data, i) => {
                   return (
                     <tr key={i}>
                       <th scope="row">{data.jobtitle}</th>

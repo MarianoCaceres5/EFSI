@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./style.css";
 import {
   FaGithub,
@@ -8,50 +8,53 @@ import {
   FaYoutube,
   FaTwitch,
 } from "react-icons/fa";
-import { socialprofils } from "../../content_option";
+import { SocialProfilsContext } from "../../context/SocialProfilsContext";
 
 export const Socialicons = (params) => {
+
+  let { socialProfils } = useContext(SocialProfilsContext); 
+
   return (
     <div className="stick_follow_icon">
       <ul>
-        {socialprofils.twitter && (
+        {socialProfils.twitter && (
           <li>
-            <a href={socialprofils.twitter}>
+            <a href={socialProfils.twitter}>
               <FaTwitter />
             </a>
           </li>
         )}
-        {socialprofils.github && (
+        {socialProfils.github && (
           <li>
-            <a href={socialprofils.github}>
+            <a href={socialProfils.github}>
               <FaGithub />
             </a>
           </li>
         )}
-        {socialprofils.facebook && (
+        {socialProfils.facebook && (
           <li>
-            <a href={socialprofils.facebook}>
+            <a href={socialProfils.facebook}>
               <FaFacebookF />
             </a>
           </li>
         )}
-        {socialprofils.linkedin && (
+        {socialProfils.linkedin && (
           <li>
-            <a href={socialprofils.linkedin}>
+            <a href={socialProfils.linkedin}>
               <FaLinkedin />
             </a>
           </li>
         )}
-        {socialprofils.youtube && (
+        {socialProfils.youtube && (
           <li>
-            <a href={socialprofils.youtube}>
+            <a href={socialProfils.youtube}>
               <FaYoutube />
             </a>
           </li>
         )}
-        {socialprofils.twitch && (
+        {socialProfils.twitch && (
           <li>
-            <a href={socialprofils.twitch}>
+            <a href={socialProfils.twitch}>
               <FaTwitch />
             </a>
           </li>
