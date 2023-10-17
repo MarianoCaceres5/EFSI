@@ -28,7 +28,7 @@ export const Portfolio = () => {
         <div className="mb-5 po_items_ho">
           {dataPortfolio.map((data, i) => {
             return (
-              <Link to={window.location.protocol + "//" + window.location.host + "/" + data.link} key={i} className="po_item">
+              <Link to={data.link} key={i} className="po_item">
                 <img src={data.img} alt="" />
                 <div className="content">
                   <p>{data.description}</p>

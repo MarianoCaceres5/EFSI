@@ -15,6 +15,7 @@ import ServicesProvider from "../context/ServicesContext";
 import ContactConfigProvider from "../context/ContactConfigContext";
 import IntroDataProvider from "../context/IntroDataContext";
 import DataPortfolioProvider from "../context/DataPortfolioContext";
+import FavoritesProvider from "../context/FavoritesContext";
 
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
@@ -27,40 +28,42 @@ const ScrollToTop = withRouter(_ScrollToTop);
 
 export default function App() {
   return (
-    <DataPortfolioProvider>
-      <IntroDataProvider>
-        <ContactConfigProvider>
-          <ServicesProvider>
-            <SkillsProvider>
-              <WorkTimeLineProvider>
-                <MetaProvider>
-                  <DataAboutProvider>
-                    <LogoTextProvider>
-                      <SocialProfilsProvider>
-                        <BrowserRouter basename={process.env.PUBLIC_URL}>
-                          <div className="cursor__dot">
-                            <AnimatedCursor
-                              innerSize={15}
-                              outerSize={15}
-                              color="255, 255 ,255"
-                              outerAlpha={0.4}
-                              innerScale={0.7}
-                              outerScale={5}
-                            />
-                          </div>
-                          <ScrollToTop>
-                            <AppRoutes />
-                          </ScrollToTop>
-                        </BrowserRouter>
-                      </SocialProfilsProvider>
-                    </LogoTextProvider>
-                  </DataAboutProvider>
-                </MetaProvider>
-              </WorkTimeLineProvider>
-            </SkillsProvider>
-          </ServicesProvider>
-        </ContactConfigProvider>
-      </IntroDataProvider>
-    </DataPortfolioProvider>
+    <FavoritesProvider>
+      <DataPortfolioProvider>
+        <IntroDataProvider>
+          <ContactConfigProvider>
+            <ServicesProvider>
+              <SkillsProvider>
+                <WorkTimeLineProvider>
+                  <MetaProvider>
+                    <DataAboutProvider>
+                      <LogoTextProvider>
+                        <SocialProfilsProvider>
+                          <BrowserRouter basename={process.env.PUBLIC_URL}>
+                            <div className="cursor__dot">
+                              <AnimatedCursor
+                                innerSize={15}
+                                outerSize={15}
+                                color="255, 255 ,255"
+                                outerAlpha={0.4}
+                                innerScale={0.7}
+                                outerScale={5}
+                              />
+                            </div>
+                            <ScrollToTop>
+                              <AppRoutes />
+                            </ScrollToTop>
+                          </BrowserRouter>
+                        </SocialProfilsProvider>
+                      </LogoTextProvider>
+                    </DataAboutProvider>
+                  </MetaProvider>
+                </WorkTimeLineProvider>
+              </SkillsProvider>
+            </ServicesProvider>
+          </ContactConfigProvider>
+        </IntroDataProvider>
+      </DataPortfolioProvider>
+    </FavoritesProvider>
   );
 }

@@ -74,84 +74,84 @@
     "dataportfolio": [
         {
             "id": 1,
-            "img": "https://picsum.photos/400/?grayscale",
+            "img": "https://fastly.picsum.photos/id/193/400/400.jpg?grayscale&hmac=ZjnepV6MYhWHrVZaL6MLIvTkmO1cNwRG1LpeOIMz3Q4",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/1"
         },
         {
             "id": 2,
-            "img": "https://picsum.photos/400/800/?grayscale",
+            "img": "https://fastly.picsum.photos/id/971/400/800.jpg?grayscale&hmac=fUGFGJ1m8Bml-7BgM5NSfsXFG30bcWETU3nRRYAim0g",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/2"
         },
         {
             "id": 3,
-            "img": "https://picsum.photos/400/?grayscale",
+            "img": "https://fastly.picsum.photos/id/229/400/400.jpg?grayscale&hmac=mqMaWMS7MjJa_cWJ7RU5EwiIGzwXNXOdPfPc3Z10Gto",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/3"
         },
         {
             "id": 4,
-            "img": "https://picsum.photos/400/600/?grayscale",
+            "img": "https://fastly.picsum.photos/id/155/400/600.jpg?grayscale&hmac=uQXf6Y7M0AxkJKtoz5L2QHuiYThqJ6uCT1CEJrLlMH8",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/4"
         },
         {
             "id": 5,
-            "img": "https://picsum.photos/400/300/?grayscale",
+            "img": "https://fastly.picsum.photos/id/203/400/300.jpg?grayscale&hmac=-alE8enKcukGGo6KPK26gQSJ4X3VxPp6Caig5Bx7Cwo",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/5"
         },
         {
             "id": 6,
-            "img": "https://picsum.photos/400/700/?grayscale",
+            "img": "https://fastly.picsum.photos/id/420/400/700.jpg?grayscale&hmac=q0F2QTkBB44qp_JPUbw9SJcP-NiOjcZzzPiiVasQLYU",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/6"
         },
         {
             "id": 7,
-            "img": "https://picsum.photos/400/600/?grayscale",
+            "img": "https://fastly.picsum.photos/id/536/400/600.jpg?grayscale&hmac=znDksPh693DM0sXbxIFgXajodDhy3_v7HtreaFsLHEE",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/7"
         },
         {
             "id": 8,
-            "img": "https://picsum.photos/400/300/?grayscale",
+            "img": "https://fastly.picsum.photos/id/13/400/300.jpg?grayscale&hmac=M0vG71fSYqo-oaWJxvod-eS8dDIVCWj8aNCeh5-P_uQ",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/8"
         },
         {
             "id": 9,
-            "img": "https://picsum.photos/400/?grayscale",
+            "img": "https://fastly.picsum.photos/id/849/400/400.jpg?grayscale&hmac=8wzLNvMJCoWZoYnRD-WMN7PD2BRvJtYhfLFyawUJ4pY",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/9"
         },
         {
             "id": 10,
-            "img": "https://picsum.photos/400/550/?grayscale",
+            "img": "https://fastly.picsum.photos/id/628/400/550.jpg?grayscale&hmac=kVVAzrId99kUMRkqfN94CQ-CXVci0D12GTop896j7KI",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/10"
         },
         {
             "id": 11,
-            "img": "https://picsum.photos/400/?grayscale",
+            "img": "https://fastly.picsum.photos/id/26/400/400.jpg?grayscale&hmac=MRHTxLtFc4uWdFkRsm3J-UclEcVlI99NDq-wnj2Ypo4",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/11"
         },
         {
             "id": 12,
-            "img": "https://picsum.photos/400/700/?grayscale",
+            "img": "https://fastly.picsum.photos/id/443/400/700.jpg?grayscale&hmac=DFrqqp5aqkwPQ7xV8DfYC3LkEuAPHWKq6-kATqRPDvI",
             "date": "20-11-23",
             "description": "The wisdom of life consists in the elimination of non-essentials.",
             "link": "/portfolio/12"

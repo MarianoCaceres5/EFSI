@@ -17,10 +17,11 @@ const DataPortfolioProvider = (props) => {
       });
   }, []);
 
+
   return (
     <DataPortfolioContext.Provider
       value={{
-        dataPortfolio,
+        dataPortfolio,        
       }}
     >
       {props.children}

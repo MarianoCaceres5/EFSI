@@ -1,0 +1,30 @@
+.creationContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 20% 0 20%;
+    text-align: center;
+}
+
+.creationContainer img{
+    border: 2px solid var(--secondary-color);
+}
+
+
+.dataContainer button {
+    background: var(--bg-color);
+    border: solid 1px var(--text-color);
+    padding: 4px 8px;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-top: 10px;
+    transition: all 400ms ease-in-out;
+}
+
+.dataContainer button:hover {
+    background: var(--secondary-color);
+    border: solid 1px var(--bg-color);
+    color: var(--bg-color);
+}
