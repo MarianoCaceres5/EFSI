@@ -26,7 +26,7 @@ const FavoritesProvider = (props) => {
     }
 
     const deleteCreation = (deletedCreation) => {
-        let newArray = favorites.filter(creation => creation !== deletedCreation);
+        let newArray = favorites.filter(creation => creation.id !== deletedCreation.id);
         setFavorites(newArray);
         localStorage.setItem(KEY_FAVORITES, JSON.stringify(newArray));
     }
@@ -36,7 +36,7 @@ const FavoritesProvider = (props) => {
     }, []);
 
     useEffect(() => {
-        console.log('FAVORITOS:',favorites.length);
+        console.log('FAVORITOS:',favorites);
     }, [favorites]);
 
     if(favorites){

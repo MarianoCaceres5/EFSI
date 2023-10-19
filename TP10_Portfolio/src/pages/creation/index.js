@@ -14,7 +14,7 @@ export default function Creation() {
 
   const loadCreation = () => {
     dataPortfolio.map(data => {
-      if (data.id == creationId) {
+      if (data.id.toString() === creationId.toString()) {
         setCreation(data);
       }
     })
@@ -32,7 +32,7 @@ export default function Creation() {
           <div className="dataContainer">
             <h1>{creation.description}</h1>
             <h3>{creation.date}</h3>
-            {favorites.includes(creation) ? (
+            {favorites.find((favorite) => favorite.id.toString() === creationId.toString()) ? (
               <button onClick={() => deleteCreation(creation)}>Delete from favorites</button>
             ):(
               <button onClick={() => addCreation(creation)}>Add to favorites</button>

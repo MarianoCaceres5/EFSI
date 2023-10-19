@@ -3,13 +3,13 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { MetaContext } from "../../context/MetaContext";
-import { DataPortfolioContext } from "../../context/DataPortfolioContext";
+import { FavoritesContext } from "../../context/FavoritesContext";
 import { Link } from "react-router-dom";
 
 export const Favorites = () => {
 
   let { meta } = useContext(MetaContext);
-  let { dataPortfolio } = useContext(DataPortfolioContext);
+  let { favorites } = useContext(FavoritesContext);
 
   return (
     <HelmetProvider>
@@ -26,7 +26,7 @@ export const Favorites = () => {
           </Col>
         </Row>
         <div className="mb-5 po_items_ho">
-          {dataPortfolio.map((data, i) => {
+          {favorites.map((data, i) => {
             return (
               <Link to={data.link} key={i} className="po_item">
                 <img src={data.img} alt="" />
