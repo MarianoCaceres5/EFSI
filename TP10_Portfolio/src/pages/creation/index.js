@@ -31,7 +31,7 @@ export default function Creation() {
           <img src={creation.img} alt="" style={{margin: '20px' }} />
           <div className="dataContainer">
             <h1>{creation.description}</h1>
-            <h3>{creation.date}</h3>
+            <h3 style={{width: '100%'}}>{creation.date}</h3>
             {favorites.find((favorite) => favorite.id.toString() === creationId.toString()) ? (
               <button onClick={() => deleteCreation(creation)}>Delete from favorites</button>
             ):(

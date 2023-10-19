@@ -1,22 +1,23 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
 import { MetaContext } from "../../context/MetaContext";
 import { IntroDataContext } from "../../context/IntroDataContext";
+import { DataPortfolioContext } from "../../context/DataPortfolioContext";
 
 export const Home = () => {
-
   let { meta } = useContext(MetaContext);
   let { introData } = useContext(IntroDataContext);
+  let { dataPortfolio } = useContext(DataPortfolioContext);
 
   return (
     <HelmetProvider>
       <section id="home" className="home">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{'' + meta.title} </title>
+          <title>{"" + meta.title} </title>
           <meta name="description" content={meta.description} />
         </Helmet>
         <div className="intro_sec d-block d-lg-flex align-items-center ">
@@ -56,6 +57,22 @@ export const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="dataContainer">
+          <h1>Best Creations</h1>
+          {dataPortfolio.map((creation, i) =>
+            i < 6 ? (
+              <Link to={creation.link} key={creation.id} className="po_item">
+                <img src={creation.img} alt="" />
+                <div className="content">
+                  <p>{creation.description}</p>
+                  <Link to={creation.link}>view project</Link>
+                </div>
+              </Link>
+            ) : (
+              <></>
+            )
+          )}
         </div>
       </section>
     </HelmetProvider>
