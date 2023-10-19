@@ -59,10 +59,10 @@ export const Home = () => {
           </div>
         </div>
         <div className="dataContainer">
-          <h1>Best Creations</h1>
+          <h1 style={{fontSize: 50, marginTop: '100px', marginBottom: '50px', width: '100%'}}>Best Creations</h1>
           {dataPortfolio.map((creation, i) =>
-            i < 6 ? (
-              <Link to={creation.link} key={creation.id} className="po_item">
+            (i < 6 ? (
+              <Link to={creation.link} key={i} className="po_item">
                 <img src={creation.img} alt="" />
                 <div className="content">
                   <p>{creation.description}</p>
@@ -71,7 +71,7 @@ export const Home = () => {
               </Link>
             ) : (
               <></>
-            )
+            ))
           )}
         </div>
       </section>

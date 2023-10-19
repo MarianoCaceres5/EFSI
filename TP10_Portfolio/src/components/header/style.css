@@ -187,6 +187,13 @@
     color: var(--text-color-3);
 }
 
+a:hover > .favoritesBadge {
+    transition: .5s ease all;
+    background-color: var(--text-color-3);
+    color: var(--primary-color);
+    border: none;
+}
+
 @media (min-width: 768px) {
     .the_menu .menu_item>a {
         font-size: 4.8vw;
@@ -204,4 +211,14 @@
     color: var(--text-color-2);
     margin-right: 10px;
     text-decoration: none;
+}
+
+.favoritesBadge{
+    width: 27.5%;
+    height: 100%;
+    border-radius: 100%;
+    border: 1px solid white;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }

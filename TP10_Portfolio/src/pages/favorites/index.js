@@ -26,17 +26,21 @@ export const Favorites = () => {
           </Col>
         </Row>
         <div className="mb-5 po_items_ho">
-          {favorites.map((data, i) => {
-            return (
-              <Link to={data.link} key={i} className="po_item">
-                <img src={data.img} alt="" />
-                <div className="content">
-                  <p>{data.description}</p>
-                  <Link to={data.link}>view project</Link>
-                </div>
-              </Link>
-            );
-          })}
+          {favorites.length !== 0 ? (
+            (favorites.map((data, i) => {
+              return (
+                <Link to={data.link} key={i} className="po_item">
+                  <img src={data.img} alt="" />
+                  <div className="content">
+                    <p>{data.description}</p>
+                    <Link to={data.link}>view project</Link>
+                  </div>
+                </Link>
+              );
+            }))
+          ):(
+            <h1>There are no favorites yet</h1>
+          )}          
         </div>
       </Container>
     </HelmetProvider>

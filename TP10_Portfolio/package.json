@@ -3,6 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@mui/material": "^5.14.14",
+        "@mui/styled-engine-sc": "^6.0.0-alpha.2",
         "axios": "^1.5.1",
         "bootstrap": "^5.3.2",
         "emailjs-com": "^3.2.0",
@@ -16,6 +18,7 @@
         "react-router-dom": "^6.6.2",
         "react-scripts": "^5.0.1",
         "react-transition-group": "^4.4.2",
+        "styled-components": "^6.1.0",
         "typewriter-effect": "^2.18.2",
         "web-vitals": "^3.1.1"
     },

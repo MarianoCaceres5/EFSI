@@ -244,6 +244,7 @@ section {
 }
 
 .dataContainer {
+    width: 100%;
     padding: 0 10% 0 10%;
     display: flex;
     align-items: center;
@@ -254,15 +255,15 @@ section {
 .po_item {
     display: inline-block;
     text-align: center;
-    margin: 0.5rem auto;
+    margin: 10px;
     position: relative;
     background: var(--secondary-color);
     padding: 6px;
     border: 1px solid var(--secondary-color);
     transition: 0.3s ease;
     font-size: 0;
-    min-height: 300px;
-    width: 100px;
+    max-width: 400px;
+    min-height: 300px;    
 }
 
 .po_item img {

@@ -4,7 +4,7 @@
 
 .table td,
 .table th {
-    color: var(--text-color);
+    color: black;
 }
 
 .t_border {

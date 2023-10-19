@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import Themetoggle from "../themetoggle";
 import { LogoTextContext } from "../../context/LogoTextContext";
 import { SocialProfilsContext } from "../../context/SocialProfilsContext";
+import { FavoritesContext } from "../../context/FavoritesContext";
 
 const Headermain = () => {
 
   let { logoText } = useContext(LogoTextContext);
   let { socialProfils } = useContext(SocialProfilsContext);
+  let { favorites } = useContext(FavoritesContext);
 
   const [isActive, setActive] = useState("false");
 
@@ -49,7 +51,7 @@ const Headermain = () => {
                   <Link onClick={handleToggle} to="/about" className="my-3">About</Link>
                   </li>
                   <li className="menu_item">
-                  <Link onClick={handleToggle} to="/favorites" className="my-3">Favorites</Link>
+                  <Link onClick={handleToggle} to="/favorites" className="my-3">Favorites <div className="favoritesBadge">{favorites.length}</div></Link>
                   </li>
                 </ul>
               </div>

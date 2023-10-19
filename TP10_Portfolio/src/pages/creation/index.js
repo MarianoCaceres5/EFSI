@@ -36,8 +36,7 @@ export default function Creation() {
               <button onClick={() => deleteCreation(creation)}>Delete from favorites</button>
             ):(
               <button onClick={() => addCreation(creation)}>Add to favorites</button>
-            )}
-            
+            )}           
           </div>
         </div>
       </>
