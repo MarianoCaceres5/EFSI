@@ -4,7 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { MetaContext } from "../../context/MetaContext";
 import { DataPortfolioContext } from "../../context/DataPortfolioContext";
-import { Link } from "react-router-dom";
+import Creation from "../../components/creation";
 
 export const Portfolio = () => {
 
@@ -28,13 +28,7 @@ export const Portfolio = () => {
         <div className="mb-5 po_items_ho">
           {dataPortfolio.map((data, i) => {
             return (
-              <Link to={data.link} key={i} className="po_item">
-                <img src={data.img} alt="" />
-                <div className="content">
-                  <p>{data.description}</p>
-                  <Link to={data.link}>view project</Link>
-                </div>
-              </Link>
+              <Creation key={i} creation={data}/>
             );
           })}
         </div>

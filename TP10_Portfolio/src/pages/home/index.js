@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { MetaContext } from "../../context/MetaContext";
 import { IntroDataContext } from "../../context/IntroDataContext";
 import { DataPortfolioContext } from "../../context/DataPortfolioContext";
+import Creation from "../../components/creation";
 
 export const Home = () => {
   let { meta } = useContext(MetaContext);
@@ -62,13 +63,7 @@ export const Home = () => {
           <h1 style={{fontSize: 50, marginTop: '100px', marginBottom: '50px', width: '100%'}}>Best Creations</h1>
           {dataPortfolio.map((creation, i) =>
             (i < 6 ? (
-              <Link to={creation.link} key={i} className="po_item">
-                <img src={creation.img} alt="" />
-                <div className="content">
-                  <p>{creation.description}</p>
-                  <Link to={creation.link}>view project</Link>
-                </div>
-              </Link>
+              <Creation key={i} creation={creation}/>
             ) : (
               <></>
             ))
