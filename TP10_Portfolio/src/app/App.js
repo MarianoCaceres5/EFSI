@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, useLocation } from "react-router-dom";
-import withRouter from "../hooks/withRouter";
+import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes";
-import AnimatedCursor from "../hooks/AnimatedCursor";
 import "./App.css";
 import SocialProfilsProvider from "../context/SocialProfilsContext";
 import LogoTextProvider from "../context/LogoTextContext";
@@ -16,15 +14,6 @@ import ContactConfigProvider from "../context/ContactConfigContext";
 import IntroDataProvider from "../context/IntroDataContext";
 import DataPortfolioProvider from "../context/DataPortfolioContext";
 import FavoritesProvider from "../context/FavoritesContext";
-
-function _ScrollToTop(props) {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return props.children;
-}
-const ScrollToTop = withRouter(_ScrollToTop);
 
 export default function App() {
   return (
@@ -39,20 +28,8 @@ export default function App() {
                     <DataAboutProvider>
                       <LogoTextProvider>
                         <SocialProfilsProvider>
-                          <BrowserRouter basename={process.env.PUBLIC_URL}>
-                            <div className="cursor__dot">
-                              <AnimatedCursor
-                                innerSize={15}
-                                outerSize={15}
-                                color="255, 255 ,255"
-                                outerAlpha={0.4}
-                                innerScale={0.7}
-                                outerScale={5}
-                              />
-                            </div>
-                            <ScrollToTop>
-                              <AppRoutes />
-                            </ScrollToTop>
+                          <BrowserRouter >
+                            <AppRoutes />
                           </BrowserRouter>
                         </SocialProfilsProvider>
                       </LogoTextProvider>
