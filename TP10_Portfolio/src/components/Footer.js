@@ -1,6 +1,6 @@
 
 import './style.css'
-import {ContactUs} from '../contact'
+import {ContactUs} from './Contact'
 
 export default function Footer() {
     return (

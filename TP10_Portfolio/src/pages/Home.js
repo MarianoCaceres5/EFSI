@@ -3,10 +3,10 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
-import { MetaContext } from "../../context/MetaContext";
-import { IntroDataContext } from "../../context/IntroDataContext";
-import { DataPortfolioContext } from "../../context/DataPortfolioContext";
-import Creation from "../../components/creation";
+import { MetaContext } from "../context/MetaContext";
+import { IntroDataContext } from "../context/IntroDataContext";
+import { DataPortfolioContext } from "../context/DataPortfolioContext";
+import Creation from "../components/Creation";
 
 export const Home = () => {
   let { meta } = useContext(MetaContext);

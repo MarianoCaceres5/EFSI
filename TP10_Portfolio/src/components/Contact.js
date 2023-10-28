@@ -3,8 +3,8 @@ import * as emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Alert } from "react-bootstrap";
-import { MetaContext } from "../../context/MetaContext";
-import { ContactConfigContext } from "../../context/ContactConfigContext";
+import { MetaContext } from "../context/MetaContext";
+import { ContactConfigContext } from "../context/ContactConfigContext";
 
 export const ContactUs = () => {
 

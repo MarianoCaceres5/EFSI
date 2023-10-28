@@ -8,7 +8,7 @@ import {
   FaYoutube,
   FaTwitch,
 } from "react-icons/fa";
-import { SocialProfilsContext } from "../../context/SocialProfilsContext";
+import { SocialProfilsContext } from "../context/SocialProfilsContext";
 
 export const Socialicons = (params) => {
 

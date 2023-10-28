@@ -2,10 +2,10 @@ import React, { useState, useContext } from "react";
 import "./style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import Themetoggle from "../themetoggle";
-import { LogoTextContext } from "../../context/LogoTextContext";
-import { SocialProfilsContext } from "../../context/SocialProfilsContext";
-import { FavoritesContext } from "../../context/FavoritesContext";
+import Themetoggle from "./ThemeToggle";
+import { LogoTextContext } from "../context/LogoTextContext";
+import { SocialProfilsContext } from "../context/SocialProfilsContext";
+import { FavoritesContext } from "../context/FavoritesContext";
 
 const Headermain = () => {
 

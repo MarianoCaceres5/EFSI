@@ -7,7 +7,7 @@ export default function Creation({ creation }) {
             <img src={creation.img} alt="" />
             <div className="content">
                 <p>{creation.description}</p>
-                <Link to={creation.link}>view project</Link>
+                <button to={creation.link}>view project</button>
             </div>
         </Link>
     )
