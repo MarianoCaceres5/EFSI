@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import "./style.css";
+import "../style.css";
 import {
   FaGithub,
   FaTwitter,
@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { SocialProfilsContext } from "../context/SocialProfilsContext";
 
-export const Socialicons = (params) => {
+export const Socialicons = () => {
 
   let { socialProfils } = useContext(SocialProfilsContext); 
 

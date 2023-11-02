@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
-import "./style.css";
+import "../style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import Themetoggle from "./ThemeToggle";
 import { LogoTextContext } from "../context/LogoTextContext";
 import { SocialProfilsContext } from "../context/SocialProfilsContext";
 import { FavoritesContext } from "../context/FavoritesContext";
@@ -28,7 +27,6 @@ const Headermain = () => {
             {logoText}
           </Link>
           <div className="d-flex align-items-center">
-          <Themetoggle />
           <button className="menu__button  nav_ac" onClick={handleToggle}>
             {!isActive ? <VscClose /> : <VscGrabber />}
           </button>

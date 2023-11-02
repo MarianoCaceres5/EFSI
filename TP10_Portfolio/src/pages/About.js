@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import "./style.css";
+import "../style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { DataAboutContext } from "../context/DataAboutContext";

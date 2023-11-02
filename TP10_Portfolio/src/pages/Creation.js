@@ -3,7 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DataPortfolioContext } from "../context/DataPortfolioContext";
 import { FavoritesContext } from "../context/FavoritesContext";
-import './style.css'
+import '../style.css'
 
 export default function Creation() {
 

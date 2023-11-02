@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./style.css";
+import "../style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";

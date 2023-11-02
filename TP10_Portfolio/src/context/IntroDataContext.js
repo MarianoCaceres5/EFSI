@@ -17,7 +17,7 @@ const IntroDataProvider = (props) => {
       });
   }, []);
 
-  if(introData.animated != undefined){
+  if(introData.animated){
     return (
         <IntroDataContext.Provider
         value={{
