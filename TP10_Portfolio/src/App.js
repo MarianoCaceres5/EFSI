@@ -46,7 +46,6 @@ export default function App() {
                                 <Route path="*" element={<Home />}></Route>
                               </Route>
                             </Routes>
-                            {/* <AppRoutes /> */}
                           </BrowserRouter>
                         </SocialProfilsProvider>
                       </LogoTextProvider>
