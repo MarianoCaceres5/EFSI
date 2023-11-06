@@ -8,11 +8,11 @@ import {
   FaYoutube,
   FaTwitch,
 } from "react-icons/fa";
-import { SocialProfilsContext } from "../context/SocialProfilsContext";
+import { DataPortfolioContext } from "../context/DataPortfolioContext";
 
 export const Socialicons = () => {
 
-  let { socialProfils } = useContext(SocialProfilsContext); 
+  let { socialProfils } = useContext(DataPortfolioContext); 
 
   return (
     <div className="stick_follow_icon">

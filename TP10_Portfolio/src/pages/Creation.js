@@ -7,13 +7,13 @@ import '../style.css'
 
 export default function Creation() {
 
-  let { dataPortfolio } = useContext(DataPortfolioContext);
+  let { creations } = useContext(DataPortfolioContext);
   let { favorites, addCreation, deleteCreation } = useContext(FavoritesContext);
   const { creationId } = useParams();
   const [creation, setCreation] = useState({});
 
   const loadCreation = () => {
-    dataPortfolio.map(data => {
+    creations.map(data => {
       if (data.id.toString() === creationId.toString()) {
         setCreation(data);
       }

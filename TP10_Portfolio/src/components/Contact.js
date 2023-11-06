@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import "../style.css";
 import { Row, Col, Alert } from "react-bootstrap";
-import { ContactConfigContext } from "../context/ContactConfigContext";
+import { DataPortfolioContext } from "../context/DataPortfolioContext";
 
 export const ContactUs = () => {
 
-  let { contactConfig } = useContext(ContactConfigContext);
+  let { contactConfig } = useContext(DataPortfolioContext);
 
   const [formData, setFormdata] = useState({
     email: "",

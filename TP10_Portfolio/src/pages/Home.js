@@ -3,15 +3,13 @@ import "../style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
 import { Link } from "react-router-dom";
-import { MetaContext } from "../context/MetaContext";
-import { IntroDataContext } from "../context/IntroDataContext";
 import { DataPortfolioContext } from "../context/DataPortfolioContext";
 import Creation from "../components/Creation";
 
 export const Home = () => {
-  let { meta } = useContext(MetaContext);
-  let { introData } = useContext(IntroDataContext);
-  let { dataPortfolio } = useContext(DataPortfolioContext);
+
+  let { meta, introData, creations } = useContext(DataPortfolioContext);
+  creations = creations.filter(creation => creation.id <= 6);
 
   return (
     <HelmetProvider>
@@ -60,13 +58,9 @@ export const Home = () => {
           </div>
         </div>
         <div className="dataContainer">
-          <h1 style={{fontSize: 50, marginTop: '100px', marginBottom: '50px', width: '100%'}}>Best Creations</h1>
-          {dataPortfolio.map((creation, i) =>
-            (i < 6 ? (
-              <Creation key={i} creation={creation}/>
-            ) : (
-              <></>
-            ))
+          <h1 style={{fontSize: 50, marginTop: '100px', marginBottom: '50px', width: '100%'}}>Best Creations</h1>          
+          {creations.map((creation, i) =>
+            <Creation key={i} creation={creation}/>
           )}
         </div>
       </section>

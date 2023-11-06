@@ -2,14 +2,12 @@ import React, {useContext} from "react";
 import "../style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-import { MetaContext } from "../context/MetaContext";
 import { DataPortfolioContext } from "../context/DataPortfolioContext";
 import Creation from "../components/Creation";
 
 export const Portfolio = () => {
 
-  let { meta } = useContext(MetaContext);
-  let { dataPortfolio } = useContext(DataPortfolioContext);
+  let { meta, creations } = useContext(DataPortfolioContext);
 
   return (
     <HelmetProvider>
@@ -26,7 +24,7 @@ export const Portfolio = () => {
           </Col>
         </Row>
         <div className="mb-5 po_items_ho">
-          {dataPortfolio.map((data, i) => {
+          {creations.map((data, i) => {
             return (
               <Creation key={i} creation={data}/>
             );

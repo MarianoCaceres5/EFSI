@@ -2,16 +2,13 @@ import React, { useState, useContext } from "react";
 import "../style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import { LogoTextContext } from "../context/LogoTextContext";
-import { SocialProfilsContext } from "../context/SocialProfilsContext";
+import { DataPortfolioContext } from "../context/DataPortfolioContext";
 import { FavoritesContext } from "../context/FavoritesContext";
 
 const Headermain = () => {
 
-  let { logoText } = useContext(LogoTextContext);
-  let { socialProfils } = useContext(SocialProfilsContext);
+  let { logoText, socialProfils } = useContext(DataPortfolioContext);
   let { favorites } = useContext(FavoritesContext);
-
   const [isActive, setActive] = useState("false");
 
   const handleToggle = () => {

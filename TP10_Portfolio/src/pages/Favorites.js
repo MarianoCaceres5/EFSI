@@ -2,13 +2,13 @@ import React, {useContext} from "react";
 import "../style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-import { MetaContext } from "../context/MetaContext";
+import { DataPortfolioContext } from "../context/DataPortfolioContext";
 import { FavoritesContext } from "../context/FavoritesContext";
 import Creation from "../components/Creation";
 
 export const Favorites = () => {
 
-  let { meta } = useContext(MetaContext);
+  let { meta } = useContext(DataPortfolioContext);
   let { favorites } = useContext(FavoritesContext);
 
   return (
