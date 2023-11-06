@@ -16,4 +16,4 @@ export default function Creation({ creation }) {
 
 Creation.propTypes = {
     creation: PropTypes.object,
-  };
+};
