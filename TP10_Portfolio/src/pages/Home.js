@@ -9,7 +9,7 @@ import Creation from "../components/Creation";
 export const Home = () => {
 
   let { meta, introData, creations } = useContext(DataPortfolioContext);
-  creations = creations.filter(creation => creation.id <= 6);
+  creations = creations.slice(0, 6);
 
   return (
     <HelmetProvider>
