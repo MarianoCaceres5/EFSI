@@ -5,7 +5,7 @@ const KEY_FAVORITES = 'favorites';
 export const FavoritesContext = createContext();
 
 const FavoritesProvider = (props) => {
-    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem(KEY_FAVORITES)));
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem(KEY_FAVORITES)) ? JSON.parse(localStorage.getItem(KEY_FAVORITES)) : []);
 
     const addCreation = (creation) => {
         setFavorites([
