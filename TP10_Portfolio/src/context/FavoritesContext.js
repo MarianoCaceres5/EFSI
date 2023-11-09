@@ -5,38 +5,22 @@ const KEY_FAVORITES = 'favorites';
 export const FavoritesContext = createContext();
 
 const FavoritesProvider = (props) => {
-    const [favorites, setFavorites] = useState([]);
-
-    const loadFavorites = () => {
-        // localStorage.setItem(KEY_FAVORITES, JSON.stringify([]))
-        let items = JSON.parse(localStorage.getItem(KEY_FAVORITES));
-        if (items) {
-            setFavorites(items);
-        } else {
-            setFavorites([]);
-        }
-    }
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem(KEY_FAVORITES)));
 
     const addCreation = (creation) => {
         setFavorites([
             ...favorites,
             creation
         ])
-        localStorage.setItem(KEY_FAVORITES, JSON.stringify([...favorites, creation]));
     }
 
     const deleteCreation = (deletedCreation) => {
         let newArray = favorites.filter(creation => creation.id !== deletedCreation.id);
-        setFavorites(newArray);
-        localStorage.setItem(KEY_FAVORITES, JSON.stringify(newArray));
+        setFavorites(newArray);        
     }
-
+    
     useEffect(() => {
-        loadFavorites();
-    }, []);
-
-    useEffect(() => {
-        console.log('FAVORITOS:',favorites);
+        localStorage.setItem(KEY_FAVORITES, JSON.stringify(favorites));
     }, [favorites]);
 
     if(favorites){
